@@ -1,0 +1,51 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "default-param-last": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": [
+      1,
+      {
+        "custom": "ignore"
+      }
+    ],
+    "react/jsx-curly-spacing": [2, "never"],
+    "no-console": 0,
+    "no-underscore-dangle": "off",
+    "camelcase": ["error", {"allow": ["set_User"]}],
+    "arrow-body-style": 0,
+    "max-classes-per-file": ["error", 4],
+    "prefer-const": ["error", {
+      "destructuring": "all",
+      "ignoreReadBeforeAssign": false
+    }],
+    "react/forbid-prop-types": 0,
+    "import/newline-after-import": "off",
+    "consistent-return": "off",
+    "prefer-destructuring": "off",
+    "eqeqeq": "off",
+    "no-duplicate-imports": "off",
+    "import/prefer-default-export": "off"
+  },
+  "settings": { "import/resolver": { "node": { "paths": ["src"] } } }
+}
