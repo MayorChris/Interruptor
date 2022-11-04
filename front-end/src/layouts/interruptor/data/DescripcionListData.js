@@ -15,6 +15,7 @@ Coded by www.creative-tim.com
 
 // Images
 import monopolar from "assets/images/interruptor/monopolar.jpeg";
+import videoPrueba from "assets/videos/lake_aerial_view_drone_flight_view_943.mp4";
 
 export default [
   {
@@ -48,10 +49,11 @@ export default [
     label: "Monopolar",
     description: "Y siento morir lentamente en mi alma a una ilusión",
     action: {
-      type: "internal",
-      route: "/pages/profile/profile-overview",
+      type: "external",
+      route:
+        "file:///C:/Users/Desarrollador/Documents/Christian/flaco/front-end/src/assets/simulation/Monopolar.html",
       color: "info",
-      label: "Acción",
+      label: "Simulación",
     },
   },
   {
@@ -91,7 +93,8 @@ export default [
     },
   },
   {
-    image: monopolar,
+    image: videoPrueba,
+    type: "video",
     title: "Animación",
     label: "Apertura Interruptor",
     description: " – – –– –––– –––– –– ––––––––",

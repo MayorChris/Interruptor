@@ -29,7 +29,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-function DefaultProjectCard({ image, label, title, description, action }) {
+function DefaultProjectCard({ image, type, label, title, description, action }) {
   return (
     <Card
       sx={{
@@ -43,18 +43,33 @@ function DefaultProjectCard({ image, label, title, description, action }) {
       <Grid container spacing={1} direction="row">
         <Grid item xs={12} xl={5}>
           <MDBox position="relative" width="100.25%" shadow="xl" borderRadius="xl">
-            <CardMedia
-              src={image}
-              component="img"
-              title={title}
-              sx={{
-                maxWidth: "100%",
-                margin: 0,
-                boxShadow: ({ boxShadows: { md } }) => md,
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
+            {type === "video" ? (
+              <CardMedia
+                src={image}
+                component="video"
+                title={title}
+                sx={{
+                  maxWidth: "100%",
+                  margin: 0,
+                  boxShadow: ({ boxShadows: { md } }) => md,
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            ) : (
+              <CardMedia
+                src={image}
+                component="img"
+                title={title}
+                sx={{
+                  maxWidth: "100%",
+                  margin: 0,
+                  boxShadow: ({ boxShadows: { md } }) => md,
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            )}
           </MDBox>
         </Grid>
         <Grid item xs={12} xl={7}>
@@ -73,12 +88,13 @@ function DefaultProjectCard({ image, label, title, description, action }) {
                 <MDTypography
                   component="a"
                   href={action.route}
-                  target="_blank"
                   rel="noreferrer"
                   variant="h3"
                   textTransform="capitalize"
                 >
                   {title}
+                  \n
+                  {action.route}
                 </MDTypography>
               )}
             </MDBox>
@@ -134,6 +150,7 @@ function DefaultProjectCard({ image, label, title, description, action }) {
 // Typechecking props for the DefaultProjectCard
 DefaultProjectCard.propTypes = {
   image: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
