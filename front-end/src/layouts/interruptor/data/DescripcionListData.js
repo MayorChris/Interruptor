@@ -15,7 +15,8 @@ Coded by www.creative-tim.com
 
 // Images
 import monopolar from "assets/images/interruptor/monopolar.jpeg";
-import videoPrueba from "assets/videos/lake_aerial_view_drone_flight_view_943.mp4";
+// import videoPrueba from "assets/videos/lake_aerial_view_drone_flight_view_943.mp4";
+import videoPrueba2 from "assets/videos/Tanque vivo Monopolar.mp4";
 
 export default [
   {
@@ -92,11 +93,11 @@ export default [
     },
   },
   {
-    image: videoPrueba,
+    image: videoPrueba2,
     type: "video",
     title: "Animación",
-    label: "Apertura Interruptor",
-    description: " – – –– –––– –––– –– ––––––––",
+    label: "Interruptor Monopolar",
+    description: "Interruptor de un solo polo\ntensión nominal 13,2 kV",
     action: {
       type: "internal",
       route: "/pages/profile/profile-overview",
