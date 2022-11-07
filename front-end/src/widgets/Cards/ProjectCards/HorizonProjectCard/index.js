@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -24,12 +24,16 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 function DefaultProjectCard({ image, type, label, title, description, action }) {
+  const host = `http://${window.location.hostname}:8080/`;
+  console.log("DefaultProjectCard");
+  console.log(type);
+  console.log(type === "video");
   return (
     <Card
       sx={{
@@ -48,6 +52,8 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
                 src={image}
                 component="video"
                 title={title}
+                controls
+                autoPlay
                 sx={{
                   maxWidth: "100%",
                   margin: 0,
@@ -93,8 +99,6 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
                   textTransform="capitalize"
                 >
                   {title}
-                  \n
-                  {action.route}
                 </MDTypography>
               )}
             </MDBox>
@@ -127,7 +131,7 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
               ) : (
                 <MDButton
                   component="a"
-                  href={action.route}
+                  href={host + action.route}
                   target="_blank"
                   rel="noreferrer"
                   variant="outlined"

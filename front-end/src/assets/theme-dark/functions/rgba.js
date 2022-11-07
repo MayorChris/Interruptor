@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -18,7 +18,7 @@ Coded by www.creative-tim.com
   to convert the hex code into rgb for using it inside the rgba color format.
  */
 
-// Go Coffee helper functions
+// Interruptor helper functions
 import hexToRgb from "assets/theme-dark/functions/hexToRgb";
 
 function rgba(color, opacity) {

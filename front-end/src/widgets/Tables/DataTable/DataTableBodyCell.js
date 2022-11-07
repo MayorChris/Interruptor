@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 
 function DataTableBodyCell({ noBorder, align, children }) {

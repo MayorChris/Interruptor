@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -27,19 +27,19 @@ import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-// Go Coffee example components
+// Interruptor example components
 import SidenavCollapse from "widgets/Sidenav/SidenavCollapse";
 
 // Custom styles for the Sidenav
 import SidenavRoot from "widgets/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "widgets/Sidenav/styles/sidenav";
 
-// Go Coffee context
+// Interruptor context
 import {
   useMaterialUIController,
   setMiniSidenav,

@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -25,17 +25,17 @@ import { Radar } from "react-chartjs-2";
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // RadarChart configurations
 import configs from "widgets/Charts/RadarChart/configs";
 
-// Go Coffee base styles
+// Interruptor base styles
 import colors from "assets/theme/base/colors";
 
-// Go Coffee helper functions
+// Interruptor helper functions
 import rgba from "assets/theme/functions/rgba";
 
 function RadarChart({ icon, title, description, chart }) {

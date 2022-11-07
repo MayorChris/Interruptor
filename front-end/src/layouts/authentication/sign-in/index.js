@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -18,7 +18,7 @@ import { useState } from "react";
 // @mui material components
 import Card from "@mui/material/Card";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
@@ -29,7 +29,7 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 
 // Images
 import logoWhite from "assets/images/logo-ct.png";
-import bgImage from "assets/images/finance-economics-work.jpg";
+import bgImage from "assets/images/hero-transformador-electrico.jpg";
 
 import authAbility from "config/ability";
 import authRoute from "auth-context/auth.route";
@@ -122,7 +122,7 @@ function Basic() {
           textAlign="center"
         >
           <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            Go Coffee
+            Interruptor
           </MDTypography>
           <MDBox component="img" src={logoWhite} alt="Brand" width="2rem" />
         </MDBox>

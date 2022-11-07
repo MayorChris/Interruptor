@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -23,23 +23,23 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 
-// Go Coffee example components
+// Interruptor example components
 import Sidenav from "widgets/Sidenav";
 import Configurator from "widgets/Configurator";
 
-// Go Coffee themes
+// Interruptor themes
 import theme from "assets/theme";
 
-// Go Coffee Dark Mode themes
+// Interruptor Dark Mode themes
 import themeDark from "assets/theme-dark";
 
-// Go Coffee routes
+// Interruptor routes
 import routes from "routes";
 
-// Go Coffee contexts
+// Interruptor contexts
 import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
 // Images
@@ -152,7 +152,7 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/authentication/sign-in" />} />
+        <Route path="*" element={<Navigate to="/interruptor" />} />
       </Routes>
     </ThemeProvider>
   );

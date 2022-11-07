@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -22,7 +22,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 
 // Custom styles for the SidenavCollapse
@@ -33,7 +33,7 @@ import {
   collapseText,
 } from "widgets/Sidenav/styles/sidenavCollapse";
 
-// Go Coffee context
+// Interruptor context
 import { useMaterialUIController } from "context";
 
 function SidenavCollapse({ icon, name, active, ...rest }) {

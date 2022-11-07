@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -19,10 +19,10 @@ import PropTypes from "prop-types";
 // @mui material components
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 
-// Go Coffee contexts
+// Interruptor contexts
 import { useMaterialUIController } from "context";
 
 function DataTableHeadCell({ width, children, sorted, align, ...rest }) {

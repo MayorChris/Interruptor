@@ -5,7 +5,7 @@ import swal from "@sweetalert/with-react";
 import Button from "@mui/material/Button";
 // import Stack from "@mui/material/Stack";
 
-// Go Coffee context
+// Interruptor context
 import { useMaterialUIController, setLayout } from "context";
 
 const ProtectedRoute = (route) => {

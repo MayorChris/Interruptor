@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -21,7 +21,7 @@ import PropTypes from "prop-types";
 // Custom styles for MDTypography
 import MDTypographyRoot from "components/MDTypography/MDTypographyRoot";
 
-// Go Coffee contexts
+// Interruptor contexts
 import { useMaterialUIController } from "context";
 
 const MDTypography = forwardRef(

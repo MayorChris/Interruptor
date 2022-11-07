@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -13,12 +13,12 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Go Coffee Base Styles
+// Interruptor Base Styles
 import colors from "assets/theme-dark/base/colors";
 import borders from "assets/theme-dark/base/borders";
 import boxShadows from "assets/theme-dark/base/boxShadows";
 
-// Go Coffee Helper Function
+// Interruptor Helper Function
 import rgba from "assets/theme-dark/functions/rgba";
 
 const { black, background } = colors;

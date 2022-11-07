@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -15,10 +15,10 @@ Coded by www.creative-tim.com
 
 // @mui material components
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 
-// Go Coffee example components
+// Interruptor example components
 import BasicLayout from "widgets/LayoutContainers/BasicLayout";
 // import Footer from "widgets/Footer";
 import HorizonProjectCard from "widgets/Cards/ProjectCards/HorizonProjectCard";
@@ -29,9 +29,10 @@ import descripcionesListData from "layouts/interruptor/data/DescripcionListData"
 
 function Overview() {
   const renderDescripciones = descripcionesListData.map(
-    ({ image, title, label, description, action }) => (
+    ({ image, type, title, label, description, action }) => (
       <HorizonProjectCard
         image={image}
+        type={type}
         title={title}
         label={label}
         description={description}

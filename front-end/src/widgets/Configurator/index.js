@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -29,7 +29,7 @@ import Icon from "@mui/material/Icon";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
@@ -37,7 +37,7 @@ import MDButton from "components/MDButton";
 // Custom styles for the Configurator
 import ConfiguratorRoot from "widgets/Configurator/ConfiguratorRoot";
 
-// Go Coffee context
+// Interruptor context
 import {
   useMaterialUIController,
   setOpenConfigurator,

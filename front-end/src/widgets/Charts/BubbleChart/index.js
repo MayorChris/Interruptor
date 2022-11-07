@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -25,14 +25,14 @@ import { Bubble } from "react-chartjs-2";
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // BubbleChart configurations
 import configs from "widgets/Charts/BubbleChart/configs";
 
-// Go Coffee base styles
+// Interruptor base styles
 import colors from "assets/theme/base/colors";
 
 function BubbleChart({ icon, title, description, height, chart }) {

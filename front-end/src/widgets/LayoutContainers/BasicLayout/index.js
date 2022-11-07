@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -21,10 +21,10 @@ import { useEffect } from "react";
 // react-router-dom components
 import { useLocation } from "react-router-dom";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 
-// Go Coffee context
+// Interruptor context
 import { useMaterialUIController, setLayout } from "context";
 
 function DashboardLayout({ children }) {

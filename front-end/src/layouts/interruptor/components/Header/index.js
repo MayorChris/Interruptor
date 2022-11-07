@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -27,12 +27,12 @@ import Tab from "@mui/material/Tab";
 // import TabPanel from "@mui/lab/TabPanel";
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 // import MDTypography from "components/MDTypography";
 // import MDAvatar from "components/MDAvatar";
 
-// Go Coffee base styles
+// Interruptor base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
 // Images

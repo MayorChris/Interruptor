@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -23,14 +23,14 @@ import Icon from "@mui/material/Icon";
 import Divider from "@mui/material/Divider";
 import Fade from "@mui/material/Fade";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Custom styles for the MDSnackbar
 import MDSnackbarIconRoot from "components/MDSnackbar/MDSnackbarIconRoot";
 
-// Go Coffee context
+// Interruptor context
 import { useMaterialUIController } from "context";
 
 function MDSnackbar({ color, icon, title, dateTime, content, close, bgWhite, ...rest }) {

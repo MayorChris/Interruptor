@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -18,7 +18,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "App";
 
-// Go Coffee Context Provider
+// Interruptor Context Provider
 import { MaterialUIControllerProvider } from "context";
 
 import { AuthProvider } from "auth-context/auth.context";

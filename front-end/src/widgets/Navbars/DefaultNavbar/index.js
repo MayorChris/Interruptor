@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -25,19 +25,19 @@ import PropTypes from "prop-types";
 import Container from "@mui/material/Container";
 import Icon from "@mui/material/Icon";
 
-// Go Coffee components
+// Interruptor components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-// Go Coffee example components
+// Interruptor example components
 import DefaultNavbarLink from "widgets/Navbars/DefaultNavbar/DefaultNavbarLink";
 import DefaultNavbarMobile from "widgets/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
-// Go Coffee base styles
+// Interruptor base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-// Go Coffee context
+// Interruptor context
 import { useMaterialUIController } from "context";
 
 function DefaultNavbar({ transparent, light, action }) {

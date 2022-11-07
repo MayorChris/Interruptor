@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Go Coffee - v2.1.0
+* Interruptor - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -50,8 +50,7 @@ export default [
     description: "Y siento morir lentamente en mi alma a una ilusión",
     action: {
       type: "external",
-      route:
-        "file:///C:/Users/Desarrollador/Documents/Christian/flaco/front-end/src/assets/simulation/Monopolar.html",
+      route: "Monopolar.html",
       color: "info",
       label: "Simulación",
     },
