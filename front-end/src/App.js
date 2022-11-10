@@ -21,10 +21,10 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 
 // Interruptor components
-import MDBox from "components/MDBox";
+// import MDBox from "components/MDBox";
 
 // Interruptor example components
 import Sidenav from "widgets/Sidenav";
@@ -40,24 +40,17 @@ import themeDark from "assets/theme-dark";
 import routes from "routes";
 
 // Interruptor contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
+import { useMaterialUIController, setMiniSidenav } from "context";
 
 // Images
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
-import ProtectedRoute from "ProtectedRoute";
+// import ProtectedRoute from "ProtectedRoute";
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
-  const {
-    miniSidenav,
-    layout,
-    openConfigurator,
-    sidenavColor,
-    transparentSidenav,
-    whiteSidenav,
-    darkMode,
-  } = controller;
+  const { miniSidenav, layout, sidenavColor, transparentSidenav, whiteSidenav, darkMode } =
+    controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const { pathname } = useLocation();
 
@@ -78,7 +71,7 @@ export default function App() {
   };
 
   // Change the openConfigurator state
-  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  // const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
 
   // Setting page scroll to 0 when changing the route
   useEffect(() => {
@@ -94,13 +87,13 @@ export default function App() {
       // }
 
       if (route.route) {
-        if (route.protected) {
-          console.log("Proteccion");
+        // if (route.protected) {
+        //   console.log("Proteccion");
 
-          return <Route exact path={route.route} element={ProtectedRoute(route)} />;
-          // const navigate = useNavigate();
-          // navigate("/");
-        }
+        //   return <Route exact path={route.route} element={ProtectedRoute(route)} />;
+        //   // const navigate = useNavigate();
+        //   // navigate("/");
+        // }
         console.log("No Proteccion");
         return <Route exact path={route.route} element={route.component} key={route.key} />;
       }
@@ -108,29 +101,29 @@ export default function App() {
       return null;
     });
 
-  const configsButton = (
-    <MDBox
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      width="3.25rem"
-      height="3.25rem"
-      bgColor="white"
-      shadow="sm"
-      borderRadius="50%"
-      position="fixed"
-      right="2rem"
-      bottom="2rem"
-      zIndex={99}
-      color="dark"
-      sx={{ cursor: "pointer" }}
-      onClick={handleConfiguratorOpen}
-    >
-      <Icon fontSize="small" color="inherit">
-        settings
-      </Icon>
-    </MDBox>
-  );
+  // const configsButton = (
+  //   <MDBox
+  //     display="flex"
+  //     justifyContent="center"
+  //     alignItems="center"
+  //     width="3.25rem"
+  //     height="3.25rem"
+  //     bgColor="white"
+  //     shadow="sm"
+  //     borderRadius="50%"
+  //     position="fixed"
+  //     right="2rem"
+  //     bottom="2rem"
+  //     zIndex={99}
+  //     color="dark"
+  //     sx={{ cursor: "pointer" }}
+  //     onClick={handleConfiguratorOpen}
+  //   >
+  //     <Icon fontSize="small" color="inherit">
+  //       settings
+  //     </Icon>
+  //   </MDBox>
+  // );
 
   return (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
@@ -140,19 +133,17 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Go Coffe"
+            brandName="Interruptor"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
           />
-          <Configurator />
-          {configsButton}
         </>
       )}
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/interruptor" />} />
+        <Route path="*" element={<Navigate to="/interruptor_potencia" />} />
       </Routes>
     </ThemeProvider>
   );

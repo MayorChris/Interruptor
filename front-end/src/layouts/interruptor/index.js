@@ -19,7 +19,7 @@ Coded by www.creative-tim.com
 import MDBox from "components/MDBox";
 
 // Interruptor example components
-import BasicLayout from "widgets/LayoutContainers/BasicLayout";
+import DashboardLayout from "widgets/LayoutContainers/DashboardLayout";
 // import Footer from "widgets/Footer";
 import HorizonProjectCard from "widgets/Cards/ProjectCards/HorizonProjectCard";
 
@@ -43,7 +43,7 @@ function Overview() {
   console.log("renderDescripciones");
   console.log(renderDescripciones);
   return (
-    <BasicLayout>
+    <DashboardLayout>
       <MDBox mb={2} />
       <Header>
         <MDBox mt={5} mb={3}>
@@ -51,7 +51,7 @@ function Overview() {
         </MDBox>
       </Header>
       {/* <Footer /> */}
-    </BasicLayout>
+    </DashboardLayout>
   );
 }
 

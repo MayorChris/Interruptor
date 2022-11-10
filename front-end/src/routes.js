@@ -37,8 +37,8 @@ Coded by www.creative-tim.com
 
 // Interruptor layouts
 import Interruptor from "layouts/interruptor";
-import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+// import SignIn from "layouts/authentication/sign-in";
+// import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -46,27 +46,70 @@ import Icon from "@mui/material/Icon";
 const routes = [
   {
     type: "collapse",
-    name: "Interruptor",
-    key: "interruptor",
-    icon: <Icon fontSize="small">person</Icon>,
-    route: "/interruptor",
+    name: "Interruptor de Potencia",
+    key: "interruptor_potencia",
+    icon: <Icon fontSize="small">radio_button_checked</Icon>,
+    route: "/interruptor_potencia",
     component: <Interruptor />,
   },
   {
     type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
-    component: <SignIn />,
+    name: "Medios de Extinción",
+    key: "medios_extincion",
+    icon: <Icon fontSize="small">fire_extinguisher</Icon>,
+    route: "/medios_extincion",
+    component: <Interruptor />,
   },
   {
     type: "collapse",
-    name: "Sign Up",
-    key: "sign-up",
-    icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/authentication/sign-up",
-    component: <SignUp />,
+    name: "Dispositivos de conmutación",
+    key: "dispositivos_conmutacion",
+    icon: <Icon fontSize="small">switch_left</Icon>,
+    route: "/dispositivos_conmutacion",
+    component: <Interruptor />,
+  },
+  {
+    type: "nested",
+    name: "Accionamiento",
+    nested: true,
+    key: "accionamiento",
+    icon: <Icon fontSize="small">close_fullscreen</Icon>,
+    route: "/accionamiento",
+    component: <Interruptor />,
+    subroutes: [
+      {
+        type: "divider",
+        name: "Tanque Vivo",
+        key: "tanque_vivo",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/dispositivos_conmutacion/tanque_vivo",
+        component: <Interruptor />,
+      },
+    ],
+  },
+  {
+    type: "collapse",
+    name: "Otros",
+    key: "otros",
+    icon: <Icon fontSize="small">api</Icon>,
+    route: "/otros",
+    component: <Interruptor />,
+  },
+  {
+    type: "collapse",
+    name: "Animación",
+    key: "animacion",
+    icon: <Icon fontSize="small">animation</Icon>,
+    route: "/animacion",
+    component: <Interruptor />,
+  },
+  {
+    type: "collapse",
+    name: "Información",
+    key: "informacion",
+    icon: <Icon fontSize="small">info</Icon>,
+    route: "/informacion",
+    component: <Interruptor />,
   },
 ];
 
