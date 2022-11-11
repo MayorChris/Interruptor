@@ -64,3 +64,46 @@ Overview.propTypes = {
 };
 
 export default Overview;
+
+// function Administracion({ index, children }) {
+//   const [, dispatch] = useSoftUIController();
+//   const submodule = "Administracion";
+//   const { pathname } = useLocation();
+//   console.log("children");
+//   console.log(children);
+//   useEffect(() => {
+//     dispatch({ type: "LAYOUT", value: "module" });
+//   }, [pathname]);
+//   console.log({ index });
+//   const [tabValue, setTabValue] = useState(index);
+//   console.log("tabValue");
+//   console.log(tabValue);
+//   const handleSetTabValue = (event, newValue) => {
+//     setTabValue(newValue);
+//     // console.log("newValue");
+//     // console.log(newValue);
+//   };
+
+//   return (
+//     <ModuleLayout>
+//       <Sidenav routes={routesSubModules} />
+//       <Header
+//         tabValue={tabValue}
+//         handleSetTabValue={handleSetTabValue}
+//         submodule={submodule}
+//         routes={routes}
+//         image1={imagemodule}
+//         image2={imageSubmodule}
+//       />
+//       {children}
+//     </ModuleLayout>
+//   );
+// }
+
+// // Typechecking props for the LayoutContainer
+// Administracion.propTypes = {
+//   index: PropTypes.number.isRequired,
+//   children: PropTypes.node.isRequired,
+// };
+
+// export default Administracion;

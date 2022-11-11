@@ -22,10 +22,7 @@ import PropTypes from "prop-types";
 import Card from "@mui/material/Card";
 // import Grid from "@mui/material/Grid";
 import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 // import TabPanel from "@mui/lab/TabPanel";
-import Icon from "@mui/material/Icon";
 
 // Interruptor components
 import MDBox from "components/MDBox";
@@ -40,8 +37,7 @@ import breakpoints from "assets/theme/base/breakpoints";
 import backgroundImage from "assets/images/interruptor/fondo.jpeg";
 
 // Overview page components
-import Menu from "layouts/interruptor/components/Header/menu";
-import SubMenu from "layouts/interruptor/components/Header/submenu";
+import TabsNav from "widgets/Tabs";
 
 function Header({ children }) {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
@@ -100,92 +96,12 @@ function Header({ children }) {
         }}
       >
         <AppBar position="static">
-          <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
-            <Tab
-              label="Interruptor de POT"
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  toggle_of
-                </Icon>
-              }
-            />
-            <Tab
-              label={
-                <Menu
-                  label="Medios de extinción"
-                  items={[
-                    "Aire",
-                    <SubMenu label="Aceite" items={["1", "2", "3"]} />,
-                    "Vacio",
-                    "SF6",
-                  ]}
-                />
-              }
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  fire_extinguisher
-                </Icon>
-              }
-            />
-            <Tab
-              label={<Menu label="Mecanismos de operación" items={["Tripolar", "Monopolar"]} />}
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  api
-                </Icon>
-              }
-            />
-            <Tab
-              label={
-                <Menu
-                  label="Dispositivos de conmutación"
-                  items={["Tanque Muerto", "Tanque Vivo"]}
-                />
-              }
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  switch_left
-                </Icon>
-              }
-            />
-            <Tab
-              label={<Menu label="Accionamiento" items={["Hidraúlico", "Neumático", "Resorte"]} />}
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  close_fullscreen
-                </Icon>
-              }
-            />
-            <Tab
-              label={<Menu label="Caso espacial" items={["Resistor-Capacitivo"]} />}
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  stars
-                </Icon>
-              }
-            />
-            <Tab
-              label={
-                <Menu
-                  label="Animación"
-                  items={["Apertura Interruptor", "Cierre Interruptor", "Interruptor en Vacio"]}
-                />
-              }
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  animation
-                </Icon>
-              }
-            />
-            <Tab
-              label="Información"
-              icon={
-                <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                  info
-                </Icon>
-              }
-            />
-          </Tabs>
+          <TabsNav
+            orientation={tabsOrientation}
+            value={tabValue}
+            onChange={handleSetTabValue}
+            routes={routes}
+          />
         </AppBar>
         {/* <Grid container spacing={3} alignItems="center">
           <Grid item>
