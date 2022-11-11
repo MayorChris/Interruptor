@@ -13,6 +13,9 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+// prop-types is a library for typechecking of props.
+import PropTypes from "prop-types";
+
 // @mui material components
 
 // Interruptor components
@@ -27,7 +30,8 @@ import HorizonProjectCard from "widgets/Cards/ProjectCards/HorizonProjectCard";
 import Header from "layouts/interruptor/components/Header";
 import descripcionesListData from "layouts/interruptor/data/DescripcionListData";
 
-function Overview() {
+function Overview({ listData }) {
+  console.log(listData);
   const renderDescripciones = descripcionesListData.map(
     ({ image, type, title, label, description, action }) => (
       <HorizonProjectCard
@@ -54,5 +58,9 @@ function Overview() {
     </DashboardLayout>
   );
 }
+
+Overview.propTypes = {
+  listData: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Overview;

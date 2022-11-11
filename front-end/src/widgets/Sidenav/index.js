@@ -85,7 +85,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
   const renderRoutes = routes.map(
-    ({ type, name, icon, title, noCollapse, key, href, route, subroutes }) => {
+    ({ type, name, icon, title, noCollapse, key, href, route, collapse }) => {
       let returnValue;
 
       if (type === "collapse") {
@@ -111,13 +111,16 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         );
       } else if (type === "nested") {
         console.log("NESTED");
+        console.log(name);
         returnValue = (
-          <SidenavCollapseNested
-            subroutes={subroutes}
-            Primaryame={name}
-            PrimaryIcon={icon}
-            active={key === collapseName}
-          />
+          <NavLink key={key} to={route}>
+            <SidenavCollapseNested
+              collapse={collapse}
+              primaryName={name}
+              primaryIcon={icon}
+              active={key === collapseName}
+            />
+          </NavLink>
         );
       } else if (type === "title") {
         returnValue = (

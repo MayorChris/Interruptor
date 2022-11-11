@@ -43,6 +43,9 @@ import Interruptor from "layouts/interruptor";
 // @mui icons
 import Icon from "@mui/material/Icon";
 
+// Videos
+import TanqueVivo from "assets/videos/Tanque vivo Monopolar.mp4";
+
 const routes = [
   {
     type: "collapse",
@@ -61,31 +64,55 @@ const routes = [
     component: <Interruptor />,
   },
   {
-    type: "collapse",
+    type: "nested",
     name: "Dispositivos de conmutación",
     key: "dispositivos_conmutacion",
     icon: <Icon fontSize="small">switch_left</Icon>,
     route: "/dispositivos_conmutacion",
     component: <Interruptor />,
+    collapse: [
+      {
+        type: "collapse",
+        name: "Tanque Vivo",
+        key: "tanque_vivo",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/dispositivos_conmutacion/tanque_vivo",
+        component: (
+          <Interruptor
+            listData={{
+              image: TanqueVivo,
+              type: "video",
+              title: "Animación",
+              label: "Interruptor Monopolar",
+              description: "Interruptor de un solo polo\ntensión nominal 13,2 kV",
+              action: {
+                type: "internal",
+                route: "/pages/profile/profile-overview",
+                color: "info",
+                label: "Acción",
+              },
+            }}
+          />
+        ),
+      },
+      {
+        type: "collapse",
+        name: "Tanque Muerto",
+        key: "tanque_muerto",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/dispositivos_conmutacion/tanque_muerto",
+        component: <Interruptor />,
+      },
+    ],
   },
   {
-    type: "nested",
+    type: "collapse",
     name: "Accionamiento",
     nested: true,
     key: "accionamiento",
     icon: <Icon fontSize="small">close_fullscreen</Icon>,
     route: "/accionamiento",
     component: <Interruptor />,
-    subroutes: [
-      {
-        type: "divider",
-        name: "Tanque Vivo",
-        key: "tanque_vivo",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/dispositivos_conmutacion/tanque_vivo",
-        component: <Interruptor />,
-      },
-    ],
   },
   {
     type: "collapse",
