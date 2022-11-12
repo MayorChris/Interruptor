@@ -75,7 +75,7 @@ const routes = [
         key: "tanque_vivo",
         icon: <Icon fontSize="small">switch_left</Icon>,
         route: "/dispositivos_conmutacion/tanque_vivo",
-        collapse: [
+        Tabs: [
           {
             type: "Tab",
             name: "Monopolar",

@@ -86,6 +86,22 @@ export default function App() {
         return getRoutes(route.collapse);
       }
 
+      if (route.Tabs) {
+        let componentPrimary;
+        const subroutes = route.Tabs.map((subroute, index) => {
+          if (index == 0) {
+            componentPrimary = subroute.component;
+          }
+          return (
+            <Route exact path={subroute.route} element={subroute.component} key={subroute.key} />
+          );
+        });
+        subroutes.push(
+          <Route exact path={route.route} element={componentPrimary} key={route.key} />
+        );
+        return subroutes;
+      }
+
       if (route.route) {
         // if (route.protected) {
         //   console.log("Proteccion");
@@ -95,6 +111,7 @@ export default function App() {
         //   // navigate("/");
         // }
         console.log("No Proteccion");
+        console.log(route.route);
         return <Route exact path={route.route} element={route.component} key={route.key} />;
       }
 
