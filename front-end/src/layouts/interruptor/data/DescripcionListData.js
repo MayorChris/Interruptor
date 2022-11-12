@@ -93,6 +93,7 @@ export default [
     },
   },
   {
+    key: "tanque_vivo_monopolar",
     image: videoPrueba2,
     type: "video",
     title: "Animación",

@@ -28,44 +28,37 @@ import Tab from "@mui/material/Tab";
 // import TabPanel from "@mui/lab/TabPanel";
 // import Link from "@mui/material/Link";
 
-function LinkTab(props) {
-  return (
-    <Tab
-      component={NavLink}
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-      {...props}
-    />
-  );
-}
+// function LinkTab(props) {
+//   return (
+//     <Tab
+//       component={NavLink}
+//       onClick={(event) => {
+//         event.preventDefault();
+//       }}
+//       {...props}
+//     />
+//   );
+// }
 
 function TabsNav({ orientation, value, onChange, routes }) {
   console.log("Aqui1==Tab_");
   console.log(value);
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
-  const renderRoutes = routes.map(({ type, name, key, icon, route, href }) => {
-    let returnValue;
-    if (type === "collapse") {
-      // console.log(index);
-      returnValue = href ? (
-        <LinkTab label={name} textColor="dark" icon={icon} p={2} href={href} />
-      ) : (
-        <Tab
-          label={name}
-          key={key}
-          textColor="dark"
-          icon={icon}
-          iconPosition="start"
-          p={2}
-          value={value}
-          to={route}
-          wrapped
-          component={NavLink}
-        />
-      );
-    }
+  const renderRoutes = routes.map(({ name, key, route }) => {
+    const returnValue = (
+      <Tab
+        label={name}
+        key={key}
+        textColor="dark"
+        iconPosition="start"
+        p={2}
+        value={value}
+        to={route}
+        wrapped
+        component={NavLink}
+      />
+    );
     // console.log(returnValue);
     return returnValue;
   });

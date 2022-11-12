@@ -39,9 +39,9 @@ import backgroundImage from "assets/images/interruptor/fondo.jpeg";
 // Overview page components
 import TabsNav from "widgets/Tabs";
 
-function Header({ children }) {
+function Header({ tabValue, handleSetTabValue, routes }) {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
-  const [tabValue, setTabValue] = useState(0);
+  // const [tabValue, setTabValue] = useState(0);
 
   useEffect(() => {
     // A function that sets the orientation state of the tabs.
@@ -63,9 +63,7 @@ function Header({ children }) {
     return () => window.removeEventListener("resize", handleTabsOrientation);
   }, [tabsOrientation]);
 
-  const handleSetTabValue = (event, newValue) => setTabValue(newValue);
-
-  const child = children.props.children;
+  // const handleSetTabValue = (event, newValue) => setTabValue(newValue);
 
   return (
     <MDBox position="relative" mb={5}>
@@ -103,108 +101,15 @@ function Header({ children }) {
             routes={routes}
           />
         </AppBar>
-        {/* <Grid container spacing={3} alignItems="center">
-          <Grid item>
-            <MDAvatar src={burceMars} alt="profile-image" size="xl" shadow="sm" />
-          </Grid>
-          <Grid item>
-            <MDBox height="100%" mt={0.5} lineHeight={1}>
-              <MDTypography variant="h5" fontWeight="medium">
-                Richard Davis
-              </MDTypography>
-              <MDTypography variant="button" color="text" fontWeight="regular">
-                CEO / Co-Founder
-              </MDTypography>
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
-            <AppBar position="static">
-              <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
-                <Tab
-                  label="Interruptor de POT"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      toggle_of
-                    </Icon>
-                  }
-                />
-                <Tab
-                  label="Medios de extinción"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      fire_extinguisher
-                    </Icon>
-                  }
-                />
-                <Tab
-                  label="Mecanismos de operación"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      api
-                    </Icon>
-                  }
-                />
-                <Tab
-                  label="Dispositivos de conmutación"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      switch_left
-                    </Icon>
-                  }
-                />
-                <Tab
-                  label="Accionamiento"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      close_fullscreen
-                    </Icon>
-                  }
-                />
-                <Tab
-                  label="Caso espacial"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      stars
-                    </Icon>
-                  }
-                />
-                <Tab
-                  label="Animación"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      animation
-                    </Icon>
-                  }
-                />
-                <Tab
-                  label="Información"
-                  icon={
-                    <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                      info
-                    </Icon>
-                  }
-                />
-              </Tabs>
-            </AppBar>
-          </Grid>
-        </Grid> */}
-        {/* <TabPanel value={tabValue} index={0}>
-          Menu
-        </TabPanel> */}
-        {child[tabValue]}
       </Card>
     </MDBox>
   );
 }
 
-// Setting default props for the Header
-Header.defaultProps = {
-  children: "",
-};
-
-// Typechecking props for the Header
 Header.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node),
+  tabValue: PropTypes.number.isRequired,
+  handleSetTabValue: PropTypes.func.isRequired,
+  routes: PropTypes.string.isRequired,
 };
 
 export default Header;

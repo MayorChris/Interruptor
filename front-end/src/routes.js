@@ -44,7 +44,8 @@ import Interruptor from "layouts/interruptor";
 import Icon from "@mui/material/Icon";
 
 // Videos
-import TanqueVivo from "assets/videos/Tanque vivo Monopolar.mp4";
+import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
+// import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
 
 const routes = [
   {
@@ -53,7 +54,6 @@ const routes = [
     key: "interruptor_potencia",
     icon: <Icon fontSize="small">radio_button_checked</Icon>,
     route: "/interruptor_potencia",
-    component: <Interruptor />,
   },
   {
     type: "collapse",
@@ -61,7 +61,6 @@ const routes = [
     key: "medios_extincion",
     icon: <Icon fontSize="small">fire_extinguisher</Icon>,
     route: "/medios_extincion",
-    component: <Interruptor />,
   },
   {
     type: "nested",
@@ -69,7 +68,6 @@ const routes = [
     key: "dispositivos_conmutacion",
     icon: <Icon fontSize="small">switch_left</Icon>,
     route: "/dispositivos_conmutacion",
-    component: <Interruptor />,
     collapse: [
       {
         type: "collapse",
@@ -77,23 +75,76 @@ const routes = [
         key: "tanque_vivo",
         icon: <Icon fontSize="small">switch_left</Icon>,
         route: "/dispositivos_conmutacion/tanque_vivo",
-        component: (
-          <Interruptor
-            listData={{
-              image: TanqueVivo,
-              type: "video",
-              title: "Animación",
-              label: "Interruptor Monopolar",
-              description: "Interruptor de un solo polo\ntensión nominal 13,2 kV",
-              action: {
-                type: "internal",
-                route: "/pages/profile/profile-overview",
-                color: "info",
-                label: "Acción",
-              },
-            }}
-          />
-        ),
+        collapse: [
+          {
+            type: "Tab",
+            name: "Monopolar",
+            key: "tanque_vivo_monopolar",
+            route: "/dispositivos_conmutacion/tanque_vivo/monopolar",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Monopolar",
+                    key: "tanque_vivo_monopolar",
+                    route: "/dispositivos_conmutacion/tanque_vivo/monopolar",
+                  },
+                  {
+                    name: "Tripolar",
+                    key: "tanque_vivo_tripolar",
+                    route: "/dispositivos_conmutacion/tanque_vivo/tripolar",
+                  },
+                ]}
+                image={TanqueVivoMonopolar}
+                type="video"
+                title="Animación"
+                label="Monopolar"
+                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+          {
+            type: "Tab",
+            name: "Tripolar",
+            key: "tanque_vivo_tripolar",
+            route: "/dispositivos_conmutacion/tanque_vivo/tripolar",
+            component: (
+              <Interruptor
+                index={1}
+                routes={[
+                  {
+                    name: "Monopolar",
+                    key: "tanque_vivo_monopolar",
+                    route: "/dispositivos_conmutacion/tanque_vivo/monopolar",
+                  },
+                  {
+                    name: "Tripolar",
+                    key: "tanque_vivo_tripolar",
+                    route: "/dispositivos_conmutacion/tanque_vivo/tripolar",
+                  },
+                ]}
+                image={TanqueVivoMonopolar}
+                type="video"
+                title="Animación"
+                label="Tripolar"
+                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+        ],
       },
       {
         type: "collapse",
@@ -101,7 +152,6 @@ const routes = [
         key: "tanque_muerto",
         icon: <Icon fontSize="small">switch_left</Icon>,
         route: "/dispositivos_conmutacion/tanque_muerto",
-        component: <Interruptor />,
       },
     ],
   },
@@ -112,7 +162,6 @@ const routes = [
     key: "accionamiento",
     icon: <Icon fontSize="small">close_fullscreen</Icon>,
     route: "/accionamiento",
-    component: <Interruptor />,
   },
   {
     type: "collapse",
@@ -120,7 +169,6 @@ const routes = [
     key: "otros",
     icon: <Icon fontSize="small">api</Icon>,
     route: "/otros",
-    component: <Interruptor />,
   },
   {
     type: "collapse",
@@ -128,7 +176,6 @@ const routes = [
     key: "animacion",
     icon: <Icon fontSize="small">animation</Icon>,
     route: "/animacion",
-    component: <Interruptor />,
   },
   {
     type: "collapse",
@@ -136,7 +183,6 @@ const routes = [
     key: "informacion",
     icon: <Icon fontSize="small">info</Icon>,
     route: "/informacion",
-    component: <Interruptor />,
   },
 ];
 
