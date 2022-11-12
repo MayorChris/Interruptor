@@ -41,11 +41,11 @@ import Tab from "@mui/material/Tab";
 // }
 
 function TabsNav({ orientation, value, onChange, routes }) {
-  console.log("Aqui1==Tab_");
+  console.log("Aqui1==Tab_??");
   console.log(value);
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
-  const renderRoutes = routes.map(({ name, key, route }) => {
+  const renderRoutes = routes.map(({ name, key, route }, index) => {
     const returnValue = (
       <Tab
         label={name}
@@ -53,7 +53,7 @@ function TabsNav({ orientation, value, onChange, routes }) {
         textColor="dark"
         iconPosition="start"
         p={2}
-        value={value}
+        value={index}
         to={route}
         wrapped
         component={NavLink}

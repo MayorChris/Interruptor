@@ -45,7 +45,7 @@ import Icon from "@mui/material/Icon";
 
 // Videos
 import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
-// import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
+import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
 
 const routes = [
   {
@@ -54,13 +54,175 @@ const routes = [
     key: "interruptor_potencia",
     icon: <Icon fontSize="small">radio_button_checked</Icon>,
     route: "/interruptor_potencia",
+    component: (
+      <Interruptor
+        index={0}
+        routes={[
+          {
+            name: "Interruptor de Potencia",
+            key: "interruptor_potencia",
+            route: "/interruptor_potencia",
+          },
+        ]}
+        image={TanqueVivoMonopolar}
+        type="video"
+        title="Animación"
+        label="Monopolar"
+        description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+        action={{
+          type: "internal",
+          route: "/pages/profile/profile-overview",
+          color: "info",
+          label: "Acción",
+        }}
+      />
+    ),
   },
   {
-    type: "collapse",
+    type: "nested",
     name: "Medios de Extinción",
     key: "medios_extincion",
     icon: <Icon fontSize="small">fire_extinguisher</Icon>,
     route: "/medios_extincion",
+    collapse: [
+      {
+        type: "collapse",
+        name: "Aire",
+        key: "aire",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/medios_extincion/aire",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Aire",
+                key: "aire",
+                route: "/medios_extincion/aire",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Aire"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+      {
+        type: "collapse",
+        name: "Aceite",
+        key: "aceite",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/medios_extincion/aceite",
+        Tabs: [
+          {
+            type: "Tab",
+            name: "Gran Volumen",
+            key: "aceite_gran_volumen",
+            route: "/medios_extincion/aceite/aceite_gran_volumen",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Gran Volumen",
+                    key: "aceite_gran_volumen",
+                    route: "/medios_extincion/aceite/aceite_gran_volumen",
+                  },
+                  {
+                    name: "Pequeño Volumen",
+                    key: "aceite_pequeño_volumen",
+                    route: "/medios_extincion/aceite/aceite_pequeno_volumen",
+                  },
+                ]}
+                image={TanqueVivoMonopolar}
+                type="video"
+                title="Aceite"
+                label="Gran Volumnen"
+                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+          {
+            type: "Tab",
+            name: "Pequeño Volumen",
+            key: "aceite_pequeño_volumen",
+            route: "/medios_extincion/aceite/aceite_pequeno_volumen",
+            component: (
+              <Interruptor
+                index={1}
+                routes={[
+                  {
+                    name: "Gran Volumen",
+                    key: "aceite_gran_volumen",
+                    route: "/medios_extincion/aceite/aceite_gran_volumen",
+                  },
+                  {
+                    name: "Pequeño Volumen",
+                    key: "aceite_pequeño_volumen",
+                    route: "/medios_extincion/aceite/aceite_pequeno_volumen",
+                  },
+                ]}
+                image={TanqueVivoTripolar}
+                type="video"
+                title="Aceite"
+                label="Pequeño Volumnen"
+                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+        ],
+      },
+      {
+        type: "collapse",
+        name: "vacio",
+        key: "vacio",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/medios_extincion/vacio",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Vacio",
+                key: "vacio",
+                route: "/medios_extincion/vacio",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Vacio"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+    ],
   },
   {
     type: "nested",
@@ -130,7 +292,7 @@ const routes = [
                     route: "/dispositivos_conmutacion/tanque_vivo/tripolar",
                   },
                 ]}
-                image={TanqueVivoMonopolar}
+                image={TanqueVivoTripolar}
                 type="video"
                 title="Animación"
                 label="Tripolar"
@@ -152,6 +314,76 @@ const routes = [
         key: "tanque_muerto",
         icon: <Icon fontSize="small">switch_left</Icon>,
         route: "/dispositivos_conmutacion/tanque_muerto",
+        Tabs: [
+          {
+            type: "Tab",
+            name: "Monopolar",
+            key: "tanque_muerto_monopolar",
+            route: "/dispositivos_conmutacion/tanque_muerto/monopolar",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Monopolar",
+                    key: "tanque_muerto_monopolar",
+                    route: "/dispositivos_conmutacion/tanque_muerto/monopolar",
+                  },
+                  {
+                    name: "Tripolar",
+                    key: "tanque_muerto_tripolar",
+                    route: "/dispositivos_conmutacion/tanque_muerto/tripolar",
+                  },
+                ]}
+                image={TanqueVivoMonopolar}
+                type="video"
+                title="Animación"
+                label="Monopolar"
+                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+          {
+            type: "Tab",
+            name: "Tripolar",
+            key: "tanque_muerto_tripolar",
+            route: "/dispositivos_conmutacion/tanque_muerto/tripolar",
+            component: (
+              <Interruptor
+                index={1}
+                routes={[
+                  {
+                    name: "Monopolar",
+                    key: "tanque_muerto_monopolar",
+                    route: "/dispositivos_conmutacion/tanque_muerto/monopolar",
+                  },
+                  {
+                    name: "Tripolar",
+                    key: "tanque_muerto_tripolar",
+                    route: "/dispositivos_conmutacion/tanque_muerto/tripolar",
+                  },
+                ]}
+                image={TanqueVivoTripolar}
+                type="video"
+                title="Animación"
+                label="Tripolar"
+                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+        ],
       },
     ],
   },

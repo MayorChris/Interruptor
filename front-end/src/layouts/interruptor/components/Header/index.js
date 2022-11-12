@@ -40,6 +40,7 @@ import backgroundImage from "assets/images/interruptor/fondo.jpeg";
 import TabsNav from "widgets/Tabs";
 
 function Header({ tabValue, handleSetTabValue, routes }) {
+  console.log(tabValue);
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
   // const [tabValue, setTabValue] = useState(0);
 

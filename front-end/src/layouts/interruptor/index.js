@@ -53,6 +53,10 @@ function Overview({ index, routes, image, type, label, title, description, actio
     console.log(newValue);
   };
 
+  useEffect(() => {
+    setTabValue(index);
+  }, [index]);
+
   return (
     <DashboardLayout>
       <MDBox mb={2} />
