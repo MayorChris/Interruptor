@@ -97,7 +97,7 @@ const routes = [
             routes={[
               {
                 name: "Aire",
-                key: "aire",
+                key: "Aire",
                 route: "/medios_extincion/aire",
               },
             ]}
@@ -213,6 +213,37 @@ const routes = [
             title="Vacio"
             label="Monopolar"
             description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+
+      {
+        type: "collapse",
+        name: "SF6",
+        key: "SF6",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/medios_extincion/vacio",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "SF6",
+                key: "SF6",
+                route: "/medios_extincion/vacio",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="SF6"
+            label="Monopo"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 "
             action={{
               type: "internal",
               route: "/pages/profile/profile-overview",
@@ -388,12 +419,43 @@ const routes = [
     ],
   },
   {
-    type: "collapse",
+    type: "nested",
     name: "Accionamiento",
-    nested: true,
     key: "accionamiento",
     icon: <Icon fontSize="small">close_fullscreen</Icon>,
     route: "/accionamiento",
+    collapse: [
+      {
+        type: "collapse",
+        name: "Resorte",
+        key: "aire",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/resorte",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Resorte",
+                key: "Resorte",
+                route: "/accionamiento/resorte",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Resorte"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+    ],
   },
   {
     type: "collapse",
