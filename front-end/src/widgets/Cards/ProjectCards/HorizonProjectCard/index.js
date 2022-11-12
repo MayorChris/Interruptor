@@ -48,6 +48,8 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
                 src={image}
                 component="video"
                 title={title}
+                autoPlay
+                controls
                 sx={{
                   maxWidth: "100%",
                   margin: 0,
@@ -76,25 +78,12 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
           <MDBox mt={1} mx={0.5}>
             <MDBox mb={1}>
               {action.type === "internal" ? (
-                <MDTypography
-                  component={Link}
-                  to={action.route}
-                  variant="h3"
-                  textTransform="capitalize"
-                >
+                <MDTypography variant="h3" textTransform="capitalize">
                   {title}
                 </MDTypography>
               ) : (
-                <MDTypography
-                  component="a"
-                  href={action.route}
-                  rel="noreferrer"
-                  variant="h3"
-                  textTransform="capitalize"
-                >
+                <MDTypography variant="h3" textTransform="capitalize">
                   {title}
-                  \n
-                  {action.route}
                 </MDTypography>
               )}
             </MDBox>

@@ -46,6 +46,8 @@ import Icon from "@mui/material/Icon";
 // Videos
 import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
 import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
+import ROSERO from "assets/videos/TQE.mp4";
+import ROSERO2 from "assets/images/interruptor/fondo.jpeg";
 
 const routes = [
   {
@@ -64,8 +66,7 @@ const routes = [
             route: "/interruptor_potencia",
           },
         ]}
-        image={TanqueVivoMonopolar}
-        type="video"
+        image={ROSERO2}
         title="Animación"
         label="Monopolar"
         description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
@@ -89,7 +90,7 @@ const routes = [
         type: "collapse",
         name: "Aire",
         key: "aire",
-        icon: <Icon fontSize="small">switch_left</Icon>,
+        icon: <Icon fontSize="small">ac_unit_icon</Icon>,
         route: "/medios_extincion/aire",
         component: (
           <Interruptor
@@ -97,18 +98,18 @@ const routes = [
             routes={[
               {
                 name: "Aire",
-                key: "Aire",
+                key: "aire",
                 route: "/medios_extincion/aire",
               },
             ]}
-            image={TanqueVivoMonopolar}
+            image={ROSERO}
             type="video"
             title="Aire"
             label="Monopolar"
             description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
             action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
+              type: "external",
+              route: "http://localhost:8080/Tanque muerto Monopolar.html",
               color: "info",
               label: "Acción",
             }}
@@ -455,21 +456,265 @@ const routes = [
           />
         ),
       },
+      {
+        type: "collapse",
+        name: "Neumático",
+        key: "Neumático",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/Neumatico",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Neumático",
+                key: "Resorte",
+                route: "/accionamiento/Neumatico",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Neumático"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+      {
+        type: "collapse",
+        name: "Hidráulico",
+        key: "aire",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/hidraulico",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Hidraúlico",
+                key: "Resorte",
+                route: "/accionamiento/hidraulico",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Hidráulico"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
     ],
   },
   {
-    type: "collapse",
+    type: "nested",
     name: "Otros",
     key: "otros",
     icon: <Icon fontSize="small">api</Icon>,
     route: "/otros",
+    collapse: [
+      {
+        type: "collapse",
+        name: "Resistor-Capacitivo",
+        key: "aire",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/resistor-capacitivo",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Resistor-Capacitivo",
+                key: "Resorte",
+                route: "/accionamiento/resorte",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Resistor-Capacitivo"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+      {
+        type: "collapse",
+        name: "Tipo T",
+        key: "Neumático",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/Tipo_T",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Tipo T",
+                key: "Resorte",
+                route: "/accionamiento/Neumatico",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Tipo T"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+      {
+        type: "collapse",
+        name: "Tipo T 4 Cámaras",
+        key: "aire",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/Tipo_T_4_Camaras",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Tipo T 4 Cámaras",
+                key: "Resorte",
+                route: "/accionamiento/hidraulico",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Tipo T 4 Cámaras"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+    ],
   },
   {
-    type: "collapse",
+    type: "nested",
     name: "Animación",
     key: "animacion",
     icon: <Icon fontSize="small">animation</Icon>,
     route: "/animacion",
+    collapse: [
+      {
+        type: "collapse",
+        name: "Cámara Monopolar",
+        key: "aire",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/camara_monopolar",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Resistor-Capacitivo",
+                key: "Resorte",
+                route: "/accionamiento/resorte",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Cámara Monopolar"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+      {
+        type: "collapse",
+        name: "Vacío",
+        key: "Neumático",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/Animacion_Vacio",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Vacío",
+                key: "Resorte",
+                route: "/accionamiento/Neumatico",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Tipo T"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+      {
+        type: "collapse",
+        name: "Tipo T 4 Cámaras",
+        key: "aire",
+        icon: <Icon fontSize="small">switch_left</Icon>,
+        route: "/accionamiento/Tipo_T_4_Camaras",
+        component: (
+          <Interruptor
+            index={0}
+            routes={[
+              {
+                name: "Tipo T 4 Cámaras",
+                key: "Resorte",
+                route: "/accionamiento/hidraulico",
+              },
+            ]}
+            image={TanqueVivoMonopolar}
+            type="video"
+            title="Tipo T 4 Cámaras"
+            label="Monopolar"
+            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            action={{
+              type: "internal",
+              route: "/pages/profile/profile-overview",
+              color: "info",
+              label: "Acción",
+            }}
+          />
+        ),
+      },
+    ],
   },
   {
     type: "collapse",
