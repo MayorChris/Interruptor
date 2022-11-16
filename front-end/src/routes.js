@@ -44,10 +44,28 @@ import Interruptor from "layouts/interruptor";
 import Icon from "@mui/material/Icon";
 
 // Videos
-import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
+//import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
+//import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
+import IntPotencia from "assets/images/interruptor/fondo.jpeg";
+import ExtAire from "assets/images/interruptor/fondo.jpeg";
+import GranVolAceite from "assets/videos/Interruptor de aceite.mp4";
+import PeqVolAceite from "assets/images/interruptor/fondo.jpeg";
+import VacioImg from "assets/images/interruptor/fondo.jpeg";
+import SF6 from "assets/images/interruptor/fondo.jpeg";
 import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
-import ROSERO from "assets/videos/TQE.mp4";
-import ROSERO2 from "assets/images/interruptor/fondo.jpeg";
+import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
+import TanqueMuertoTripolar from "assets/videos/Tanque muerto Tripolar.mp4";
+import TanqueMuertoMonopolar from "assets/videos/Tanque muerto Monopolar.mp4";
+import Resorte from "assets/images/interruptor/fondo.jpeg";
+import Neumatico from "assets/images/interruptor/fondo.jpeg";
+import Hidraulico from "assets/images/interruptor/fondo.jpeg";
+import TanqueVivoMonopolarTipoTCapRes from "assets/videos/Tanque vivo Monopolar Tipo T con Capacitores - Resistores.mp4";
+import TanqueVivoMonopolarTipoT from "assets/videos/Tanque vivo Monopolar Tipo T.mp4";
+import TanqueVivoMonopolarTipoT4 from "assets/videos/Tanque vivo Monopolar Tipo T 4 cámaras.mp4";
+import Explosion from "assets/videos/Interruptor Explosión.mp4";
+import Vacio from "assets/videos/Interruptor de vacio.mp4";
+import ArcoNormal from "assets/videos/Interruptor Arco Normal.mp4";
+import ArcoCorto from "assets/videos/Interruptor Arco Corto.mp4";
 
 const routes = [
   {
@@ -66,10 +84,10 @@ const routes = [
             route: "/interruptor_potencia",
           },
         ]}
-        image={ROSERO2}
-        title="Animación"
-        label="Monopolar"
-        description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+        image={IntPotencia}
+        title="Interruptor de Potencia"
+        label="Interruptor"
+        description="Interruptor de potencia es un dispositivo capaz de interrupmpir el flujo de corriente, bien sea en operación normal o en corto circuito..."
         action={{
           type: "internal",
           route: "/pages/profile/profile-overview",
@@ -90,26 +108,25 @@ const routes = [
         type: "collapse",
         name: "Aire",
         key: "aire",
-        icon: <Icon fontSize="small">ac_unit_icon</Icon>,
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/medios_extincion/aire",
         component: (
           <Interruptor
             index={0}
             routes={[
               {
-                name: "Aire",
+                name: "AIRE",
                 key: "aire",
                 route: "/medios_extincion/aire",
               },
             ]}
-            image={ROSERO}
-            type="video"
-            title="Aire"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            image={ExtAire}
+            title="AIRE"
+            label="Aire"
+            description="El interruptor de aire usado anteriormente, a través del tiempo..."
             action={{
-              type: "external",
-              route: "http://localhost:8080/Tanque muerto Monopolar.html",
+              type: "internal",
+              route: "/pages/profile/profile-overview",
               color: "info",
               label: "Acción",
             }}
@@ -120,7 +137,7 @@ const routes = [
         type: "collapse",
         name: "Aceite",
         key: "aceite",
-        icon: <Icon fontSize="small">switch_left</Icon>,
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/medios_extincion/aceite",
         Tabs: [
           {
@@ -143,14 +160,14 @@ const routes = [
                     route: "/medios_extincion/aceite/aceite_pequeno_volumen",
                   },
                 ]}
-                image={TanqueVivoMonopolar}
+                image={GranVolAceite}
                 type="video"
                 title="Aceite"
-                label="Gran Volumnen"
-                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                label="Gran Volumen"
+                description="Interruptor de gran volumen, por su alta capacidad de contener aceite, lo hace un medio de interrupción peligroso en caso de una explosión..."
                 action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
+                  type: "external",
+                  route: "http://localhost:8080/Interruptor de aceite.html",
                   color: "info",
                   label: "Acción",
                 }}
@@ -177,11 +194,10 @@ const routes = [
                     route: "/medios_extincion/aceite/aceite_pequeno_volumen",
                   },
                 ]}
-                image={TanqueVivoTripolar}
-                type="video"
+                image={PeqVolAceite}
                 title="Aceite"
-                label="Pequeño Volumnen"
-                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                label="Pequeño Volumen"
+                description="Interruptor de pequeño volumen, en cuanto a espacio es mas sofisticado que el de gran volumen..."
                 action={{
                   type: "internal",
                   route: "/pages/profile/profile-overview",
@@ -195,9 +211,9 @@ const routes = [
       },
       {
         type: "collapse",
-        name: "vacio",
+        name: "Vacío",
         key: "vacio",
-        icon: <Icon fontSize="small">switch_left</Icon>,
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/medios_extincion/vacio",
         component: (
           <Interruptor
@@ -209,11 +225,10 @@ const routes = [
                 route: "/medios_extincion/vacio",
               },
             ]}
-            image={TanqueVivoMonopolar}
-            type="video"
-            title="Vacio"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            image={VacioImg}
+            title="Vacío"
+            label="Vacío"
+            description="Interruptor de vacío, su uso tecnológico cada vez es mas usado hasta media tensión..."
             action={{
               type: "internal",
               route: "/pages/profile/profile-overview",
@@ -228,8 +243,8 @@ const routes = [
         type: "collapse",
         name: "SF6",
         key: "SF6",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/medios_extincion/vacio",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/medios_extincion/SF6",
         component: (
           <Interruptor
             index={0}
@@ -237,14 +252,13 @@ const routes = [
               {
                 name: "SF6",
                 key: "SF6",
-                route: "/medios_extincion/vacio",
+                route: "/medios_extincion/SF6",
               },
             ]}
-            image={TanqueVivoMonopolar}
-            type="video"
+            image={SF6}
             title="SF6"
-            label="Monopo"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 "
+            label="SF6"
+            description="Interruptor en SF6, junto al de vacío son los interruptores más utilizados, con la diferencia que este está destinado también para alta tensión..."
             action={{
               type: "internal",
               route: "/pages/profile/profile-overview",
@@ -267,7 +281,7 @@ const routes = [
         type: "collapse",
         name: "Tanque Vivo",
         key: "tanque_vivo",
-        icon: <Icon fontSize="small">switch_left</Icon>,
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/dispositivos_conmutacion/tanque_vivo",
         Tabs: [
           {
@@ -292,12 +306,12 @@ const routes = [
                 ]}
                 image={TanqueVivoMonopolar}
                 type="video"
-                title="Animación"
+                title="Tanque Vivo"
                 label="Monopolar"
-                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                description="Interruptor Tanque Vivo Monopolar, su nombre se debe a dos cosas..."
                 action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
+                  type: "external",
+                  route: "http://localhost:8080/Tanque vivo Monopolar.html",
                   color: "info",
                   label: "Acción",
                 }}
@@ -326,12 +340,12 @@ const routes = [
                 ]}
                 image={TanqueVivoTripolar}
                 type="video"
-                title="Animación"
+                title="Tanque Vivo"
                 label="Tripolar"
-                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                description="Interruptor Tanque Vivo Tripolar, ..."
                 action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
+                  type: "external",
+                  route: "http://localhost:8080/Tanque vivo Tripolar.html",
                   color: "info",
                   label: "Acción",
                 }}
@@ -344,7 +358,7 @@ const routes = [
         type: "collapse",
         name: "Tanque Muerto",
         key: "tanque_muerto",
-        icon: <Icon fontSize="small">switch_left</Icon>,
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/dispositivos_conmutacion/tanque_muerto",
         Tabs: [
           {
@@ -367,14 +381,14 @@ const routes = [
                     route: "/dispositivos_conmutacion/tanque_muerto/tripolar",
                   },
                 ]}
-                image={TanqueVivoMonopolar}
+                image={TanqueMuertoMonopolar}
                 type="video"
-                title="Animación"
+                title="Tanque Muerto"
                 label="Monopolar"
-                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                description="Interruptor Tanque Muerto Monopolar, ..."
                 action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
+                  type: "external",
+                  route: "http://localhost:8080/Tanque muerto Monopolar.html",
                   color: "info",
                   label: "Acción",
                 }}
@@ -401,14 +415,14 @@ const routes = [
                     route: "/dispositivos_conmutacion/tanque_muerto/tripolar",
                   },
                 ]}
-                image={TanqueVivoTripolar}
+                image={TanqueMuertoTripolar}
                 type="video"
-                title="Animación"
+                title="Tanque Muerto"
                 label="Tripolar"
-                description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+                description="Interruptor Tanque Muerto Tripolar, ..."
                 action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
+                  type: "external",
+                  route: "http://localhost:8080/Tanque muerto Tripolar.html",
                   color: "info",
                   label: "Acción",
                 }}
@@ -429,8 +443,8 @@ const routes = [
       {
         type: "collapse",
         name: "Resorte",
-        key: "aire",
-        icon: <Icon fontSize="small">switch_left</Icon>,
+        key: "resorte",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/accionamiento/resorte",
         component: (
           <Interruptor
@@ -442,11 +456,10 @@ const routes = [
                 route: "/accionamiento/resorte",
               },
             ]}
-            image={TanqueVivoMonopolar}
-            type="video"
+            image={Resorte}
             title="Resorte"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            label="Resorte"
+            description="Dentro de los accionamientos tenemos el de resorte, el cual..."
             action={{
               type: "internal",
               route: "/pages/profile/profile-overview",
@@ -459,24 +472,23 @@ const routes = [
       {
         type: "collapse",
         name: "Neumático",
-        key: "Neumático",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/accionamiento/Neumatico",
+        key: "neumatico",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/accionamiento/neumatico",
         component: (
           <Interruptor
             index={0}
             routes={[
               {
                 name: "Neumático",
-                key: "Resorte",
+                key: "neumatico",
                 route: "/accionamiento/Neumatico",
               },
             ]}
-            image={TanqueVivoMonopolar}
-            type="video"
+            image={Neumatico}
             title="Neumático"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            label="neumático"
+            description="Dentro de los accionamientos tenemos el de neumático, el cual..."
             action={{
               type: "internal",
               route: "/pages/profile/profile-overview",
@@ -490,7 +502,7 @@ const routes = [
         type: "collapse",
         name: "Hidráulico",
         key: "aire",
-        icon: <Icon fontSize="small">switch_left</Icon>,
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/accionamiento/hidraulico",
         component: (
           <Interruptor
@@ -498,15 +510,14 @@ const routes = [
             routes={[
               {
                 name: "Hidraúlico",
-                key: "Resorte",
+                key: "hidraulico",
                 route: "/accionamiento/hidraulico",
               },
             ]}
-            image={TanqueVivoMonopolar}
-            type="video"
+            image={Hidraulico}
             title="Hidráulico"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            label="Hidráulico"
+            description="Dentro de los accionamientos tenemos el hidráulico, el cual..."
             action={{
               type: "internal",
               route: "/pages/profile/profile-overview",
@@ -528,27 +539,27 @@ const routes = [
       {
         type: "collapse",
         name: "Resistor-Capacitivo",
-        key: "aire",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/accionamiento/resistor-capacitivo",
+        key: "resistor-capacitivo",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/otros/resistor_capacitivo",
         component: (
           <Interruptor
             index={0}
             routes={[
               {
                 name: "Resistor-Capacitivo",
-                key: "Resorte",
-                route: "/accionamiento/resorte",
+                key: "resistor-capacitivo",
+                route: "/otros/resistor_capacitivo",
               },
             ]}
-            image={TanqueVivoMonopolar}
+            image={TanqueVivoMonopolarTipoTCapRes}
             type="video"
             title="Resistor-Capacitivo"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            label="Resistor Capacitivo"
+            description="Otro de los interruptores diferentes, tenemos ..."
             action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
+              type: "external",
+              route: "http://localhost:8080/Tanque vivo Monopolar Tipo T con Capacitores - Resistores.html",
               color: "info",
               label: "Acción",
             }}
@@ -558,27 +569,27 @@ const routes = [
       {
         type: "collapse",
         name: "Tipo T",
-        key: "Neumático",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/accionamiento/Tipo_T",
+        key: "tipo_t",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/otros/Tipo_T",
         component: (
           <Interruptor
             index={0}
             routes={[
               {
                 name: "Tipo T",
-                key: "Resorte",
-                route: "/accionamiento/Neumatico",
+                key: "tipo_t",
+                route: "/otros/Tipo_T",
               },
             ]}
-            image={TanqueVivoMonopolar}
+            image={TanqueVivoMonopolarTipoT}
             type="video"
             title="Tipo T"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            label="Tipo T"
+            description="Otro de los interruptores diferentes, tenemos ..."
             action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
+              type: "external",
+              route: "http://localhost:8080/Tanque vivo Monopolar Tipo T.html",
               color: "info",
               label: "Acción",
             }}
@@ -588,27 +599,27 @@ const routes = [
       {
         type: "collapse",
         name: "Tipo T 4 Cámaras",
-        key: "aire",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/accionamiento/Tipo_T_4_Camaras",
+        key: "tipo_t_4_camaras",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/otros/Tipo_T_4_Camaras",
         component: (
           <Interruptor
             index={0}
             routes={[
               {
                 name: "Tipo T 4 Cámaras",
-                key: "Resorte",
-                route: "/accionamiento/hidraulico",
+                key: "tipo_t_4_camaras",
+                route: "/otros/Tipo_T_4_Camaras",
               },
             ]}
-            image={TanqueVivoMonopolar}
+            image={TanqueVivoMonopolarTipoT4}
             type="video"
             title="Tipo T 4 Cámaras"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            label="Tipo T 4 Cámaras"
+            description="Otro de los interruptores diferentes, tenemos ..."
             action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
+              type: "external",
+              route: "http://localhost:8080/Tanque vivo Monopolar Tipo T 4 cámaras.html",
               color: "info",
               label: "Acción",
             }}
@@ -627,27 +638,27 @@ const routes = [
       {
         type: "collapse",
         name: "Cámara Monopolar",
-        key: "aire",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/accionamiento/camara_monopolar",
+        key: "camara_monopolar",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/animacion/camara_monopolar",
         component: (
           <Interruptor
             index={0}
             routes={[
               {
-                name: "Resistor-Capacitivo",
-                key: "Resorte",
-                route: "/accionamiento/resorte",
+                name: "Cámara Monopolar",
+                key: "camara_monopolar",
+                route: "/animacion/camara_monopolar",
               },
             ]}
-            image={TanqueVivoMonopolar}
+            image={Explosion}
             type="video"
             title="Cámara Monopolar"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            label="Cámara"
+            description="Este diseño muestra la estructura interna que normalmente se encuentra dentro de los interruptores..."
             action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
+              type: "external",
+              route: "http://localhost:8080/Interruptor Explosión.html",
               color: "info",
               label: "Acción",
             }}
@@ -657,62 +668,111 @@ const routes = [
       {
         type: "collapse",
         name: "Vacío",
-        key: "Neumático",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/accionamiento/Animacion_Vacio",
+        key: "vacio",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/animacion/Vacio",
         component: (
           <Interruptor
             index={0}
             routes={[
               {
                 name: "Vacío",
-                key: "Resorte",
-                route: "/accionamiento/Neumatico",
+                key: "vacio",
+                route: "/animacion/Vacio",
               },
             ]}
-            image={TanqueVivoMonopolar}
+            image={Vacio}
             type="video"
-            title="Tipo T"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
+            title="Vacío"
+            label="Vacío"
+            description="Contiene la estructura interna del interruptor en vacío..."
             action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
+              type: "external",
+              route: "http://localhost:8080/Interruptor de vacio.html",
               color: "info",
               label: "Acción",
             }}
           />
         ),
       },
+
       {
         type: "collapse",
-        name: "Tipo T 4 Cámaras",
-        key: "aire",
-        icon: <Icon fontSize="small">switch_left</Icon>,
-        route: "/accionamiento/Tipo_T_4_Camaras",
-        component: (
-          <Interruptor
-            index={0}
-            routes={[
-              {
-                name: "Tipo T 4 Cámaras",
-                key: "Resorte",
-                route: "/accionamiento/hidraulico",
-              },
-            ]}
-            image={TanqueVivoMonopolar}
-            type="video"
-            title="Tipo T 4 Cámaras"
-            label="Monopolar"
-            description="Interruptor de un solo polo\ntensión nominal 13,2 kV"
-            action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
-              color: "info",
-              label: "Acción",
-            }}
-          />
-        ),
+        name: "Arco",
+        key: "arco",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/animacion/arco",
+
+        Tabs: [
+          {
+            type: "Tab",
+            name: "Arco Normal",
+            key: "arco normal",
+            route: "/animacion/arco/arco_normal",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Arco Normal",
+                    key: "arco normal",
+                    route: "/animacion/arco/arco_normal",
+                  },
+                  {
+                    name: "Arco Corto",
+                    key: "arco corto",
+                    route: "/animacion/arco/arco_corto",
+                  },
+                ]}
+                image={ArcoNormal}
+                type="video"
+                title="Arco Normal"
+                label="Arco"
+                description="En condiciones normales..."
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+          {
+            type: "Tab",
+            name: "Arco Corto",
+            key: "arco corto",
+            route: "/animacion/arco/arco_corto",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Arco Normal",
+                    key: "arco normal",
+                    route: "/animacion/arco/arco_normal",
+                  },
+                  {
+                    name: "Arco Corto",
+                    key: "arco corto",
+                    route: "/animacion/arco/arco_corto",
+                  },
+                ]}
+                image={ArcoCorto}
+                type="video"
+                title="Arco Corto"
+                label="Arco"
+                description="Apertura Cierre en condición de corto"
+                action={{
+                  type: "internal",
+                  route: "/pages/profile/profile-overview",
+                  color: "info",
+                  label: "Acción",
+                }}
+              />
+            ),
+          },
+        ],
       },
     ],
   },
