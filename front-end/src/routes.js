@@ -44,8 +44,8 @@ import Interruptor from "layouts/interruptor";
 import Icon from "@mui/material/Icon";
 
 // Videos
-//import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
-//import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
+// import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
+// import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
 import IntPotencia from "assets/images/interruptor/fondo.jpeg";
 import ExtAire from "assets/images/interruptor/fondo.jpeg";
 import GranVolAceite from "assets/videos/Interruptor de aceite.mp4";
@@ -63,7 +63,9 @@ import TanqueVivoMonopolarTipoTCapRes from "assets/videos/Tanque vivo Monopolar 
 import TanqueVivoMonopolarTipoT from "assets/videos/Tanque vivo Monopolar Tipo T.mp4";
 import TanqueVivoMonopolarTipoT4 from "assets/videos/Tanque vivo Monopolar Tipo T 4 cámaras.mp4";
 import Explosion from "assets/videos/Interruptor Explosión.mp4";
+import CamaraMonopolarCompleto from "assets/videos/Interruptor_Monopolar_Completo.mp4";
 import Vacio from "assets/videos/Interruptor de vacio.mp4";
+import VacioCompleto from "assets/videos/Interruptor Vacío Completo.mp4";
 import ArcoNormal from "assets/videos/Interruptor Arco Normal.mp4";
 import ArcoCorto from "assets/videos/Interruptor Arco Corto.mp4";
 
@@ -86,7 +88,7 @@ const routes = [
         ]}
         image={IntPotencia}
         title="Interruptor de Potencia"
-        label="Interruptor"
+        label=""
         description="Interruptor de potencia es un dispositivo capaz de interrupmpir el flujo de corriente, bien sea en operación normal o en corto circuito..."
         action={{
           type: "internal",
@@ -559,7 +561,8 @@ const routes = [
             description="Otro de los interruptores diferentes, tenemos ..."
             action={{
               type: "external",
-              route: "http://localhost:8080/Tanque vivo Monopolar Tipo T con Capacitores - Resistores.html",
+              route:
+                "http://localhost:8080/Tanque vivo Monopolar Tipo T con Capacitores - Resistores.html",
               color: "info",
               label: "Acción",
             }}
@@ -637,66 +640,162 @@ const routes = [
     collapse: [
       {
         type: "collapse",
-        name: "Cámara Monopolar",
-        key: "camara_monopolar",
+        name: "Monopolar",
+        key: "monopolar",
         icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
-        route: "/animacion/camara_monopolar",
-        component: (
-          <Interruptor
-            index={0}
-            routes={[
-              {
-                name: "Cámara Monopolar",
-                key: "camara_monopolar",
-                route: "/animacion/camara_monopolar",
-              },
-            ]}
-            image={Explosion}
-            type="video"
-            title="Cámara Monopolar"
-            label="Cámara"
-            description="Este diseño muestra la estructura interna que normalmente se encuentra dentro de los interruptores..."
-            action={{
-              type: "external",
-              route: "http://localhost:8080/Interruptor Explosión.html",
-              color: "info",
-              label: "Acción",
-            }}
-          />
-        ),
-      },
-      {
-        type: "collapse",
-        name: "Vacío",
-        key: "vacio",
-        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
-        route: "/animacion/Vacio",
-        component: (
-          <Interruptor
-            index={0}
-            routes={[
-              {
-                name: "Vacío",
-                key: "vacio",
-                route: "/animacion/Vacio",
-              },
-            ]}
-            image={Vacio}
-            type="video"
-            title="Vacío"
-            label="Vacío"
-            description="Contiene la estructura interna del interruptor en vacío..."
-            action={{
-              type: "external",
-              route: "http://localhost:8080/Interruptor de vacio.html",
-              color: "info",
-              label: "Acción",
-            }}
-          />
-        ),
-      },
+        route: "/animacion/monopolar",
 
-      {
+        Tabs: [
+          {
+            type: "Tab",
+            name: "Monopolar Completo",
+            key: "monopolar completo",
+            route: "/animacion/monopolar/monopolar_completo",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Monopolar Completo",
+                    key: "monopolar completo",
+                    route: "/animacion/monopolar/monopolar_completo",
+                  },
+                  {
+                    name: "Camara Monopolar",
+                    key: "camara monopolar",
+                    route: "/animacion/monopolar/camara_monopolar",
+                  },
+                ]}
+                image={CamaraMonopolarCompleto}
+                type="video"
+                title="Monopolar Completo"
+                label="Monopolar Completo"
+                description="En condiciones normales..."
+                action={{
+                    type: "external",
+                    route: "http://localhost:8080/Interruptor_Monopolar_Completo.html",
+                    color: "info",
+                    label: "Acción",
+                }}
+              />
+            ),
+          },
+          {
+            type: "Tab",
+            name: "Camara Monopolar",
+            key: "camara monopolar",
+            route: "/animacion/monopolar/camara_monopolar",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Camara Monopolar",
+                    key: "camara monopolar",
+                    route: "/animacion/monopolar/monopolar_completo",
+                  },
+                  {
+                    name: "Camara Monopolar",
+                    key: "camara monopolar",
+                    route: "/animacion/monopolar/camara_monopolar",
+                  },
+                ]}
+                image={Explosion}
+                type="video"
+                title="Camara Monopolar"
+                label="Camara Monopolar"
+                description="En condiciones normales..."
+                action={{
+                    type: "external",
+                    route: "http://localhost:8080/Interruptor Explosión.html",
+                    color: "info",
+                    label: "Acción",
+                }}
+              />
+            ),
+          },
+        ],
+      },  
+
+      /* {
+        type: "collapse",
+        name: "Vaciooo",
+        key: "vaciooo",
+        icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
+        route: "/animacion/vaciooo",
+
+        Tabs: [
+          {
+            type: "Tab",
+            name: "Vacio Completo",
+            key: "vacio completo",
+            route: "/animacion/monopolar/vacio_completo",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Vacio Completo",
+                    key: "vacio completo",
+                    route: "/animacion/monopolar/vacio_completo",
+                  },
+                  {
+                    name: "Interruptor de Vacio",
+                    key: "interruptor de vacio",
+                    route: "/animacion/monopolar/interruptor_de_vacio",
+                  },
+                ]}
+                image={VacioCompleto}
+                type="video"
+                title="Vacio Completo"
+                label="Vacio Completo"
+                description="En condiciones normales..."
+                action={{
+                    type: "external",
+                    route: "http://localhost:8080/Interruptor Vacío Completo.html",
+                    color: "info",
+                    label: "Acción",
+                }}
+              />
+            ),
+          },
+          {
+            type: "Tab",
+            name: "Interruptor de Vacio",
+            key: "interruptor de vacio",
+            route: "/animacion/monopolar/interruptor_de_vacio",
+            component: (
+              <Interruptor
+                index={0}
+                routes={[
+                  {
+                    name: "Vacio Completo",
+                    key: "vacio completo",
+                    route: "/animacion/monopolar/vacio_completo",
+                  },
+                  {
+                    name: "Interruptor de Vacio",
+                    key: "interruptor de vacio",
+                    route: "/animacion/monopolar/interruptor_de_vacio",
+                  },
+                ]}
+                image={Vacio}
+                type="video"
+                title="Vacio"
+                label="Vacio"
+                description="En condiciones normales..."
+                action={{
+                    type: "external",
+                    route: "http://localhost:8080/Interruptor de vacio.html",
+                    color: "info",
+                    label: "Acción",
+                }}
+              />
+            ),
+          },
+        ],
+      } */
+      /* {
         type: "collapse",
         name: "Arco",
         key: "arco",
@@ -773,7 +872,7 @@ const routes = [
             ),
           },
         ],
-      },
+      }, */
     ],
   },
   {
