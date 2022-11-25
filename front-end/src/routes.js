@@ -643,8 +643,7 @@ const routes = [
         name: "Monopolar",
         key: "monopolar",
         icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
-        route: "/animacion/monopolar",
-
+        route: "/animacion/monopolar123",
         Tabs: [
           {
             type: "Tab",
@@ -672,10 +671,10 @@ const routes = [
                 label="Monopolar Completo"
                 description="En condiciones normales..."
                 action={{
-                    type: "external",
-                    route: "http://localhost:8080/Interruptor_Monopolar_Completo.html",
-                    color: "info",
-                    label: "Acción",
+                  type: "external",
+                  route: "http://localhost:8080/Interruptor_Monopolar_Completo.html",
+                  color: "info",
+                  label: "Acción",
                 }}
               />
             ),
@@ -690,8 +689,8 @@ const routes = [
                 index={0}
                 routes={[
                   {
-                    name: "Camara Monopolar",
-                    key: "camara monopolar",
+                    name: "Monopolar Completo",
+                    key: "monopolar completo",
                     route: "/animacion/monopolar/monopolar_completo",
                   },
                   {
@@ -706,24 +705,22 @@ const routes = [
                 label="Camara Monopolar"
                 description="En condiciones normales..."
                 action={{
-                    type: "external",
-                    route: "http://localhost:8080/Interruptor Explosión.html",
-                    color: "info",
-                    label: "Acción",
+                  type: "external",
+                  route: "http://localhost:8080/Interruptor Explosión.html",
+                  color: "info",
+                  label: "Acción",
                 }}
               />
             ),
           },
         ],
-      },  
-
-      /* {
+      },
+      {
         type: "collapse",
-        name: "Vaciooo",
-        key: "vaciooo",
+        name: "Vacio",
+        key: "vacio",
         icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
-        route: "/animacion/vaciooo",
-
+        route: "/animacion/vacio",
         Tabs: [
           {
             type: "Tab",
@@ -751,10 +748,10 @@ const routes = [
                 label="Vacio Completo"
                 description="En condiciones normales..."
                 action={{
-                    type: "external",
-                    route: "http://localhost:8080/Interruptor Vacío Completo.html",
-                    color: "info",
-                    label: "Acción",
+                  type: "external",
+                  route: "http://localhost:8080/Interruptor Vacío Completo.html",
+                  color: "info",
+                  label: "Acción",
                 }}
               />
             ),
@@ -785,23 +782,22 @@ const routes = [
                 label="Vacio"
                 description="En condiciones normales..."
                 action={{
-                    type: "external",
-                    route: "http://localhost:8080/Interruptor de vacio.html",
-                    color: "info",
-                    label: "Acción",
+                  type: "external",
+                  route: "http://localhost:8080/Interruptor de vacio.html",
+                  color: "info",
+                  label: "Acción",
                 }}
               />
             ),
           },
         ],
-      } */
-      /* {
+      },
+      {
         type: "collapse",
         name: "Arco",
         key: "arco",
         icon: <Icon fontSize="small">my_location_outlined_icon</Icon>,
         route: "/animacion/arco",
-
         Tabs: [
           {
             type: "Tab",
@@ -863,8 +859,8 @@ const routes = [
                 label="Arco"
                 description="Apertura Cierre en condición de corto"
                 action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
+                  type: "external",
+                  route: "http://localhost:8080/Interruptor_Monopolar.pdf",
                   color: "info",
                   label: "Acción",
                 }}
@@ -872,7 +868,7 @@ const routes = [
             ),
           },
         ],
-      }, */
+      },
     ],
   },
   {
