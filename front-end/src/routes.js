@@ -37,6 +37,7 @@ Coded by www.creative-tim.com
 
 // Interruptor layouts
 import Interruptor from "layouts/interruptor";
+import Informacion from "layouts/informacion";
 // import SignIn from "layouts/authentication/sign-in";
 // import SignUp from "layouts/authentication/sign-up";
 
@@ -877,6 +878,7 @@ const routes = [
     key: "informacion",
     icon: <Icon fontSize="small">info</Icon>,
     route: "/informacion",
+    component: <Informacion />,
   },
 ];
 

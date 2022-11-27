@@ -77,15 +77,9 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
         <Grid item xs={12} xl={7}>
           <MDBox mt={1} mx={0.5}>
             <MDBox mb={1}>
-              {action.type === "internal" ? (
-                <MDTypography variant="h3" textTransform="capitalize">
-                  {title}
-                </MDTypography>
-              ) : (
-                <MDTypography variant="h3" textTransform="capitalize">
-                  {title}
-                </MDTypography>
-              )}
+              <MDTypography variant="h3" textTransform="capitalize">
+                {title}
+              </MDTypography>
             </MDBox>
             <MDBox mb={1}>
               <MDTypography
@@ -102,31 +96,33 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
                 {description}
               </MDTypography>
             </MDBox>
-            <MDBox display="flex" justifyContent="space-between" alignItems="center">
-              {action.type === "internal" ? (
-                <MDButton
-                  component={Link}
-                  to={action.route}
-                  variant="outlined"
-                  size="small"
-                  color={action.color}
-                >
-                  {action.label}
-                </MDButton>
-              ) : (
-                <MDButton
-                  component="a"
-                  href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant="outlined"
-                  size="small"
-                  color={action.color}
-                >
-                  {action.label}
-                </MDButton>
-              )}
-            </MDBox>
+            {action && (
+              <MDBox display="flex" justifyContent="space-between" alignItems="center">
+                {action.type === "internal" ? (
+                  <MDButton
+                    component={Link}
+                    to={action.route}
+                    variant="outlined"
+                    size="small"
+                    color={action.color}
+                  >
+                    {action.label}
+                  </MDButton>
+                ) : (
+                  <MDButton
+                    component="a"
+                    href={action.route}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="outlined"
+                    size="small"
+                    color={action.color}
+                  >
+                    {action.label}
+                  </MDButton>
+                )}
+              </MDBox>
+            )}
           </MDBox>
         </Grid>
       </Grid>
@@ -135,6 +131,10 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
 }
 
 // Setting default values for the props of DefaultProjectCard
+
+DefaultProjectCard.defaultProps = {
+  action: false,
+};
 
 // Typechecking props for the DefaultProjectCard
 DefaultProjectCard.propTypes = {
@@ -158,7 +158,7 @@ DefaultProjectCard.propTypes = {
       "white",
     ]).isRequired,
     label: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
 };
 
 export default DefaultProjectCard;
