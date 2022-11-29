@@ -83,10 +83,14 @@ export default function App() {
     allRoutes.map((route) => {
       console.log(route);
       if (route.collapse) {
-        const routePrimary = route.collapse[0];
+        console.log(route.collapse);
+        const routePrimary = { ...route.collapse[0] };
         routePrimary.type = "";
         routePrimary.route = route.route;
         route.collapse.push(routePrimary);
+        // console.log(route.collapse[0]);
+        // console.log(routePrimary);
+        // console.log(route.collapse);
         return getRoutes(route.collapse);
       }
 
