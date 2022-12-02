@@ -861,7 +861,7 @@ const routes = [
                 description="Apertura Cierre en condición de corto"
                 action={{
                   type: "external",
-                  route: "http://localhost:8080/Interruptor_Monopolar.pdf",
+                  route: "http://localhost:8080/Interruptor_Monopolar_Completo.pdf",
                   color: "info",
                   label: "Acción",
                 }}
