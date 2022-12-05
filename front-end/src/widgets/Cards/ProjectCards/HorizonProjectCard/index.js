@@ -48,7 +48,6 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
                 src={image}
                 component="video"
                 title={title}
-                autoPlay
                 controls
                 sx={{
                   maxWidth: "100%",

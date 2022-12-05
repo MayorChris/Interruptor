@@ -91,12 +91,6 @@ const routes = [
         title="Interruptor de Potencia"
         label=""
         description="Interruptor de potencia es un dispositivo capaz de interrupmpir el flujo de corriente, bien sea en operación normal o en corto circuito..."
-        action={{
-          type: "internal",
-          route: "/pages/profile/profile-overview",
-          color: "info",
-          label: "Acción",
-        }}
       />
     ),
   },
@@ -127,12 +121,6 @@ const routes = [
             title="AIRE"
             label="Aire"
             description="El interruptor de aire usado anteriormente, a través del tiempo..."
-            action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
-              color: "info",
-              label: "Acción",
-            }}
           />
         ),
       },
@@ -825,12 +813,6 @@ const routes = [
                 title="Arco Normal"
                 label="Arco"
                 description="En condiciones normales..."
-                action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
-                  color: "info",
-                  label: "Acción",
-                }}
               />
             ),
           },
@@ -859,12 +841,6 @@ const routes = [
                 title="Arco Corto"
                 label="Arco"
                 description="Apertura Cierre en condición de corto"
-                action={{
-                  type: "external",
-                  route: "http://localhost:8080/Interruptor_Monopolar_Completo.pdf",
-                  color: "info",
-                  label: "Acción",
-                }}
               />
             ),
           },

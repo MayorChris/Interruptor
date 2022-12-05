@@ -14,17 +14,14 @@ Coded by www.creative-tim.com
 */
 
 // Images
-import kal from "assets/images/kal-visuals-square.jpg";
-import marie from "assets/images/marie.jpg";
-import ivana from "assets/images/ivana-square.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+import Felipe from "assets/images/Felipe Lopez.jpg";
+import Wilson from "assets/images/marie.jpg";
 
 export default [
   {
-    image: kal,
-    name: "Sophie B.",
-    description: "Hi! I need more information..",
+    image: Felipe,
+    name: "Felipe López",
+    description: "Tecnólogo en Electrónica - Estudiante de Ingeniería Eléctrica",
     action: {
       type: "external",
       route: "/pages/profile/profile-overview",
@@ -33,42 +30,9 @@ export default [
     },
   },
   {
-    image: marie,
-    name: "Anne Marie",
-    description: "Awesome work, can you..",
-    action: {
-      type: "external",
-      route: "/pages/profile/profile-overview",
-      color: "info",
-      label: "Perfil",
-    },
-  },
-  {
-    image: ivana,
-    name: "Ivanna",
-    description: "About files I can..",
-    action: {
-      type: "external",
-      route: "/pages/profile/profile-overview",
-      color: "info",
-      label: "Perfil",
-    },
-  },
-  {
-    image: team4,
-    name: "Peterson",
-    description: "Have a great afternoon..",
-    action: {
-      type: "external",
-      route: "/pages/profile/profile-overview",
-      color: "info",
-      label: "Perfil",
-    },
-  },
-  {
-    image: team3,
-    name: "Nick Daniel",
-    description: "Hi! I need more information..",
+    image: Wilson,
+    name: "Wilson Potosí",
+    description: "Popayan",
     action: {
       type: "external",
       route: "/pages/profile/profile-overview",
