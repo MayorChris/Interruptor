@@ -189,12 +189,6 @@ const routes = [
                 title="Aceite"
                 label="Pequeño Volumen"
                 description="Interruptor de pequeño volumen, en cuanto a espacio es mas sofisticado que el de gran volumen..."
-                action={{
-                  type: "internal",
-                  route: "/pages/profile/profile-overview",
-                  color: "info",
-                  label: "Acción",
-                }}
               />
             ),
           },
@@ -220,12 +214,6 @@ const routes = [
             title="Vacío"
             label="Vacío"
             description="Interruptor de vacío, su uso tecnológico cada vez es mas usado hasta media tensión..."
-            action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
-              color: "info",
-              label: "Acción",
-            }}
           />
         ),
       },
@@ -250,12 +238,6 @@ const routes = [
             title="SF6"
             label="SF6"
             description="Interruptor en SF6, junto al de vacío son los interruptores más utilizados, con la diferencia que este está destinado también para alta tensión..."
-            action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
-              color: "info",
-              label: "Acción",
-            }}
           />
         ),
       },
@@ -451,12 +433,6 @@ const routes = [
             title="Resorte"
             label="Resorte"
             description="Dentro de los accionamientos tenemos el de resorte, el cual..."
-            action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
-              color: "info",
-              label: "Acción",
-            }}
           />
         ),
       },
@@ -480,12 +456,6 @@ const routes = [
             title="Neumático"
             label="neumático"
             description="Dentro de los accionamientos tenemos el de neumático, el cual..."
-            action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
-              color: "info",
-              label: "Acción",
-            }}
           />
         ),
       },
@@ -509,12 +479,6 @@ const routes = [
             title="Hidráulico"
             label="Hidráulico"
             description="Dentro de los accionamientos tenemos el hidráulico, el cual..."
-            action={{
-              type: "internal",
-              route: "/pages/profile/profile-overview",
-              color: "info",
-              label: "Acción",
-            }}
           />
         ),
       },
@@ -701,7 +665,7 @@ const routes = [
                 }}
                 action2={{
                   type: "external",
-                  route: "http://localhost:8080/Interruptor Explosión.html",
+                  route: "http://localhost:8080/Interruptor_Monopolar_Completo.pdf",
                   color: "info",
                   label: "Acción2",
                 }}
