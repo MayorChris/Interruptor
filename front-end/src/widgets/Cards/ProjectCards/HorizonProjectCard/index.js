@@ -29,7 +29,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-function DefaultProjectCard({ image, type, label, title, description, action }) {
+function DefaultProjectCard({ image, type, label, title, description, action, action2 }) {
   return (
     <Card
       sx={{
@@ -95,33 +95,66 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
                 {description}
               </MDTypography>
             </MDBox>
-            {action && (
-              <MDBox display="flex" justifyContent="space-between" alignItems="center">
-                {action.type === "internal" ? (
-                  <MDButton
-                    component={Link}
-                    to={action.route}
-                    variant="outlined"
-                    size="small"
-                    color={action.color}
-                  >
-                    {action.label}
-                  </MDButton>
-                ) : (
-                  <MDButton
-                    component="a"
-                    href={action.route}
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="outlined"
-                    size="small"
-                    color={action.color}
-                  >
-                    {action.label}
-                  </MDButton>
-                )}
-              </MDBox>
-            )}
+            <Grid container spacing={1} direction="row">
+              {action && (
+                <Grid item xs={12} xl={2}>
+                  <MDBox display="flex" justifyContent="space-between" alignItems="center">
+                    {action.type === "internal" ? (
+                      <MDButton
+                        component={Link}
+                        to={action.route}
+                        variant="outlined"
+                        size="small"
+                        color={action.color}
+                      >
+                        {action.label}
+                      </MDButton>
+                    ) : (
+                      <MDButton
+                        component="a"
+                        href={action.route}
+                        target="_blank"
+                        rel="noreferrer"
+                        variant="outlined"
+                        size="small"
+                        color={action.color}
+                      >
+                        {action.label}
+                      </MDButton>
+                    )}
+                  </MDBox>
+                </Grid>
+              )}
+              {action2 && (
+                <Grid item xs={12} xl={2}>
+                  <MDBox display="flex" justifyContent="space-between" alignItems="center">
+                    {action2.type === "internal" ? (
+                      <MDButton
+                        component={Link}
+                        to={action2.route}
+                        variant="outlined"
+                        size="small"
+                        color={action2.color}
+                      >
+                        {action2.label}
+                      </MDButton>
+                    ) : (
+                      <MDButton
+                        component="a"
+                        href={action2.route}
+                        target="_blank"
+                        rel="noreferrer"
+                        variant="outlined"
+                        size="small"
+                        color={action2.color}
+                      >
+                        {action2.label}
+                      </MDButton>
+                    )}
+                  </MDBox>
+                </Grid>
+              )}
+            </Grid>
           </MDBox>
         </Grid>
       </Grid>
@@ -133,6 +166,7 @@ function DefaultProjectCard({ image, type, label, title, description, action }) 
 
 DefaultProjectCard.defaultProps = {
   action: false,
+  action2: false,
 };
 
 // Typechecking props for the DefaultProjectCard
@@ -143,6 +177,22 @@ DefaultProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   action: PropTypes.shape({
+    type: PropTypes.oneOf(["external", "internal"]),
+    route: PropTypes.string.isRequired,
+    color: PropTypes.oneOf([
+      "primary",
+      "secondary",
+      "info",
+      "success",
+      "warning",
+      "error",
+      "light",
+      "dark",
+      "white",
+    ]).isRequired,
+    label: PropTypes.string.isRequired,
+  }),
+  action2: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]),
     route: PropTypes.string.isRequired,
     color: PropTypes.oneOf([

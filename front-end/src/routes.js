@@ -699,6 +699,12 @@ const routes = [
                   color: "info",
                   label: "Acción",
                 }}
+                action2={{
+                  type: "external",
+                  route: "http://localhost:8080/Interruptor Explosión.html",
+                  color: "info",
+                  label: "Acción2",
+                }}
               />
             ),
           },

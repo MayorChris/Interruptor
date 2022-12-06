@@ -35,7 +35,7 @@ import Header from "layouts/interruptor/components/Header";
 
 import { useMaterialUIController } from "context";
 
-function Overview({ index, routes, image, type, label, title, description, action }) {
+function Overview({ index, routes, image, type, label, title, description, action, action2 }) {
   const [, dispatch] = useMaterialUIController();
   const { pathname } = useLocation();
 
@@ -69,6 +69,7 @@ function Overview({ index, routes, image, type, label, title, description, actio
           label={label}
           description={description}
           action={action}
+          action2={action2}
         />
       </MDBox>
       {/* <Footer /> */}
@@ -85,6 +86,22 @@ Overview.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   action: PropTypes.shape({
+    type: PropTypes.oneOf(["external", "internal"]),
+    route: PropTypes.string.isRequired,
+    color: PropTypes.oneOf([
+      "primary",
+      "secondary",
+      "info",
+      "success",
+      "warning",
+      "error",
+      "light",
+      "dark",
+      "white",
+    ]).isRequired,
+    label: PropTypes.string.isRequired,
+  }).isRequired,
+  action2: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]),
     route: PropTypes.string.isRequired,
     color: PropTypes.oneOf([

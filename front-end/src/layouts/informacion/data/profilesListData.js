@@ -22,22 +22,10 @@ export default [
     image: Felipe,
     name: "Felipe López",
     description: "Tecnólogo en Electrónica - Estudiante de Ingeniería Eléctrica",
-    action: {
-      type: "external",
-      route: "/pages/profile/profile-overview",
-      color: "info",
-      label: "Perfil",
-    },
   },
   {
     image: Wilson,
     name: "Wilson Potosí",
     description: "Popayan",
-    action: {
-      type: "external",
-      route: "/pages/profile/profile-overview",
-      color: "info",
-      label: "Perfil",
-    },
   },
 ];
