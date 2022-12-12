@@ -1,0 +1,2 @@
+@ECHO
+serve -s build

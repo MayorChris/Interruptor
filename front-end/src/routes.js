@@ -50,7 +50,7 @@ import Icon from "@mui/material/Icon";
 import IntPotencia from "assets/images/interruptor/fondo.jpeg";
 import ExtAire from "assets/images/interruptor/Interruptor Soplo Aire.jpg";
 import GranVolAceite from "assets/videos/Interruptor de aceite.mp4";
-import PeqVolAceite from "assets/images/interruptor/fondo.jpeg";
+import PeqVolAceite from "assets/images/interruptor/Aceite Mínimo.jpg";
 import VacioImg from "assets/images/interruptor/Interruptor Vacío.jpg";
 import SF6 from "assets/images/interruptor/Interruptor SF6.jpg";
 import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
@@ -742,7 +742,7 @@ const routes = [
                 description="En condiciones normales..."
                 action={{
                   type: "external",
-                  route: "http://localhost:8080/Interruptor de vacio.html",
+                  route: "http://localhost:8080/Interruptor de vacio",
                   color: "info",
                   label: "Acción",
                 }}
