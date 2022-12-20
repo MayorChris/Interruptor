@@ -57,7 +57,7 @@ import TanqueVivoTripolar from "assets/videos/Tanque vivo Tripolar.mp4";
 import TanqueVivoMonopolar from "assets/videos/Tanque vivo Monopolar.mp4";
 import TanqueMuertoTripolar from "assets/videos/Tanque muerto Tripolar.mp4";
 import TanqueMuertoMonopolar from "assets/videos/Tanque muerto Monopolar.mp4";
-import Resorte from "assets/images/interruptor/Resorte.jpg";
+import Resorte from "assets/videos/Sistema de Resorte.mp4";
 import Neumatico from "assets/images/interruptor/Neumático.jpg";
 import Hidraulico from "assets/images/interruptor/Hidraúlico.jpg";
 import TanqueVivoMonopolarTipoTCapRes from "assets/videos/Tanque vivo Monopolar Tipo T con Capacitores - Resistores.mp4";
@@ -158,7 +158,7 @@ const routes = [
                 title="Aceite"
                 label="Gran Volumen"
                 description="Este tipo de interruptores usan la reacción del aceite al momento de producirse un arco para su propia extinción. El arco eléctrico provoca que se rompan las moléculas del aceite generando hidrogeno y otros gases, además de, una especie de turbulencia en el aceite dentro del tanque o cámara de extinción, dichas reacciones químicas y físicas son las que enfrían y comprimen el plasma del arco hasta su des-ionisación.
-                Como su nombre lo indica este tipo de interruptores de potencia alberga en la cámara de extinción una cantidad importe de aceite, ejemplo, para interruptores de 145 kV la cantidad de aceite es en promedio de 12000 litros, para un interruptore de 230 kV se necesitarían aproximadamente 50000 litros."
+                \n Como su nombre lo indica este tipo de interruptores de potencia alberga en la cámara de extinción una cantidad importe de aceite, ejemplo, para interruptores de 145 kV la cantidad de aceite es en promedio de 12000 litros, para un interruptore de 230 kV se necesitarían aproximadamente 50000 litros."
                 action={{
                   type: "external",
                   route: "http://localhost:8080/Interruptor de aceite.html",
@@ -216,7 +216,8 @@ const routes = [
             image={VacioImg}
             title="Vacío"
             label="Vacío"
-            description="El vacío es un ambiente con una alta capacidad dieléctrica contenida en una cámara sellada permanentemente, esto permite que la distancia de los contactos sean pequeñas, de acuerdo a la capacidad del interruptor la separación de los contactos puede estar entre los 6 mm hasta 25 mm.  Presenta una rápida interrupción del arco desde el momento en que se separan los contactos, con la interrupción del arco la fuerza dieléctrica del vacío aumenta mucho mas en comparación a otros medios dieléctricos.
+            description="El vacío es un ambiente con una alta capacidad dieléctrica contenida en una cámara sellada permanentemente, esto permite que la distancia de los contactos sean pequeñas, de acuerdo a la capacidad del interruptor la separación de los contactos puede estar entre los 6 mm hasta 25 mm.
+            \n Presenta una rápida interrupción del arco desde el momento en que se separan los contactos, con la interrupción del arco la fuerza dieléctrica del vacío aumenta mucho mas en comparación a otros medios dieléctricos.
             Los interruptores de vacío son altamente eficiente, de pequeño tamaño y menor costo, el vacío no es un dieléctrico que requiera de mantenimientos periódicos, lo que lo representa como un tipo de interruptor con una vida útil alta además de ser compactos y confiables . Sin embargo, estos interruptores pueden ser propensaos a reencendidos e interrupciones prematuras de pequeñas corrientes inductivas."
           />
         ),
@@ -444,8 +445,8 @@ const routes = [
               },
             ]}
             image={Resorte}
+            type="video"
             title="Resorte"
-            label="Resorte"
             description="Dentro de los accionamientos tenemos el de resorte, el cual..."
           />
         ),
