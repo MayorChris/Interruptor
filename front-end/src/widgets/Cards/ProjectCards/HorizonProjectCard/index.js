@@ -30,6 +30,16 @@ import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 function DefaultProjectCard({ image, type, label, title, description, action, action2 }) {
+  const arrayDescriptions = description.split("\\n");
+  const renderDescription = arrayDescriptions.map((des) => {
+    return (
+      <MDTypography variant="body2" fontWeight="light" color="text">
+        {des}
+      </MDTypography>
+    );
+  });
+
+  console.log(renderDescription);
   return (
     <Card
       sx={{
@@ -91,9 +101,7 @@ function DefaultProjectCard({ image, type, label, title, description, action, ac
               </MDTypography>
             </MDBox>
             <MDBox mb={3} lineHeight={0}>
-              <MDTypography variant="body2" fontWeight="light" color="text">
-                {description}
-              </MDTypography>
+              {renderDescription}
             </MDBox>
             <Grid container spacing={1} direction="row">
               {action && (

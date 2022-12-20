@@ -121,7 +121,7 @@ const routes = [
             image={ExtAire}
             title="AIRE"
             label=""
-            description="Estos interruptores utilizan  el aire como medio de interrupción a presión atmosférica, logrando des-ionizar el arco eléctrico por la acción enfriadora que caracteriza este elemento. El arco producido en la cámara de interrupción puede estirarse y así aumentar su resistencia por longitud y confinamiento, logrando que la corriente de cortocircuito descienda y que la corriente y el voltaje entren en fase. Una vez se reduce la diferencia entre la tensión del sistema y la corriente de corto, se tendrá la seguridad que el voltaje de restablecimiento tendrá un valor bajo.
+            description="Estos interruptores utilizan  el aire como medio de interrupción a presión atmosférica, logrando des-ionizar el arco eléctrico por la acción enfriadora que caracteriza este elemento. \n El arco producido en la cámara de interrupción puede estirarse y así aumentar su resistencia por longitud y confinamiento, logrando que la corriente de cortocircuito descienda y que la corriente y el voltaje entren en fase. \n Una vez se reduce la diferencia entre la tensión del sistema y la corriente de corto, se tendrá la seguridad que el voltaje de restablecimiento tendrá un valor bajo.
             Debido a que la energía disipada es tan elevada, su aplicación se limita a mediana y baja potencia."
           />
         ),
